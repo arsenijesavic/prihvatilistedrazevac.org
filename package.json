@@ -1,0 +1,40 @@
+{
+  "name": "my-balkans",
+  "version": "1.0.0",
+  "description": "Web site for mybalkans.net",
+  "scripts": {
+    "build": "cross-env ELEVENTY_PRODUCTION=true eleventy && cross-env NODE_ENV=production postcss src/styles/tailwind.css --o _site/style.css",
+    "start": "eleventy --serve & postcss src/styles/tailwind.css --o _tmp/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/11ty/eleventy-base-blog.git"
+  },
+  "author": {
+    "name": "Arsenije Savic",
+    "email": "zachleatherman@gmail.com",
+    "url": "https://zachleat.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/11ty/eleventy-base-blog/issues"
+  },
+  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@tailwindcss/aspect-ratio": "^0.2.0",
+    "autoprefixer": "^10.1.0",
+    "clean-css": "^4.2.3",
+    "clean-css-cli": "^4.3.0",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.16.1",
+    "dotenv": "^8.2.0",
+    "html-minifier": "^4.0.0",
+    "markdown-it": "^12.0.4",
+    "markdown-it-anchor": "^6.0.1",
+    "postcss": "^8.2.2",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2"
+  },
+  "dependencies": {}
+}

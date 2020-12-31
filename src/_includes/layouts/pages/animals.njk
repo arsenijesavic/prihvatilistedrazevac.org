@@ -1,0 +1,31 @@
+---
+layout: base
+theme: dark
+---
+
+<section class='min-h-screen flex flex-col justify-center bg-white text-black px-16 pb-32'>
+    <div class='container mx-auto py-16'>
+        <header>
+            <h1 class='text-7xl leading-none mt-32'>
+                {{ metadata['en'].page.animals.headline }}
+            </h1>
+        </header>
+
+        <div>
+
+        <ul class='grid grid-cols-4 gap-8 mt-8'>
+            {% for animal in animals %}
+                <li>
+                    <a href="{{ animal.href }}">
+                        <figure class='aspect-w-1 aspect-h-1'>
+                            <img class='w-full h-full object-cover rounded-xl shadow-yellow-lg' src="{{ animal.image }}" alt="">
+                        </figure>
+                        <p class='text-3xl mt-4'>{{ animal.name }}</p>
+                        <p class='opacity-75'>{{ animal.age }}</p>
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+        </div>
+    </div>
+</section>
