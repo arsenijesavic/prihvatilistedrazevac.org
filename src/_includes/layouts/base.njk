@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# <meta name="viewport" content="width=device-width, initial-scale=1.0"> #}
+    {# <meta name="viewport" content="initial-scale=1.0, width=device-width"> #}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
     <link rel="stylesheet" href="/style.css"/>
@@ -18,7 +22,7 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   </head>
 
-  <body>
+  <body class='relative'>
     <header id='navigation' class='fixed top-0 left-0 right-0 z-50 px-16 pt-8 transition all duration-300 ease-in {{ 'text-black' if 'dark' === theme else 'text-white' }}'>
       <div class='container mx-auto flex justify-between items'>
         <div class=''>
@@ -48,11 +52,11 @@
       </div>
     </header>
 
-    <main class="bg-white text-black">
+    <main class="bg-white text-black min-h-screen">
       {{ content | safe }}
     </main>
 
-    <footer class='bg-brown text-black relative pt-12'>
+    {# <footer class='bg-brown text-black relative pt-12'>
       <div class='text-brown absolute left-0 right-0 top-0 z-30'>
           <svg class='fill-current transform -translate-y-10' viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 16.7681L364.342 0L606.364 35.8599L979.404 9.58371L1272.93 35.8599L1440 16.7681V48H0V16.7681Z" />
@@ -215,7 +219,7 @@
           </ul>
         </div>
       </div>
-    </footer>
+    </footer> #}
 
     <script>
       const body = document.body;

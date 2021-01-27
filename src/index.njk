@@ -4,63 +4,62 @@ theme: light
 footer: { title: 'Posetite nas', href: '/see' }
 ---
 
-<header class='min-h-screen flex items-center relative text-white'>
-    <div class='relative z-30 flex justify-center items-center px-16'>
-        <div class='container mx-auto'>
-            <h1 class='text-7xl font-medium leading-none'>
+<header class='w-full min-h-screen flex items-center relative text-white bg-red'>
+    <div class='flex justify-center items-center relative z-30 sm:px-16'>
+        <div class='w-full sm:container mx-auto'>
+            <h1 class='text-6xl sm:text-7xl font-medium leading-none'>
                 Prihvatilište <br/> Draževac
             </h1>
 
-            <p class='text-2xl mt-4 font-light'>
-                Privremena kuća njušaka <br/> koje traže stalnu kuću
+            <p class='text-xl sm:text-2xl mt-4 font-light'>
+                Privremena kuća za njuške <br/> koje traže stalni dom
             </p>
         </div>
     </div>
 
     <div class='absolute left-0 right-0 bottom-0 z-30 pb-8'>
         <ul class='flex justify-center items-center py-8'>
-            <li class='text-center px-16 border-r-2 border-gray-300'>
-                <p class='text-5xl leading-none font-bold'>302</p>
-                <p class='text-2xl leading-none'>psa</p>
+            <li class='text-center px-6 sm:px-16 border-r-2 border-gray-300'>
+                <p class='text-xl sm:text-5xl leading-none font-bold'>200</p>
+                <p class='text-sm sm:text-2xl leading-none'>psa</p>
             </li>
-            <li class='text-center px-16 border-r-2 border-gray-300'>
-                <p class='text-5xl leading-none font-bold'>50</p>
-                <p class='text-2xl leading-none'>mačaka</p>
+            <li class='text-center px-6 sm:px-16 border-r-2 border-gray-300'>
+                <p class='text-xl sm:text-5xl leading-none font-bold'>100</p>
+                <p class='text-sm sm:text-2xl leading-none'>mačaka</p>
             </li>
-            <li class='text-center px-16 border-r-2 border-gray-300'>
-                <p class='text-5xl leading-none font-bold'>1</p>
-                <p class='text-2xl leading-none'>konj</p>
+            <li class='text-center px-6 sm:px-16 border-r-2 border-gray-300'>
+                <p class='text-xl sm:text-5xl leading-none font-bold'>1</p>
+                <p class='text-sm sm:text-2xl leading-none'>konj</p>
             </li>
-            <li class='text-center px-16 border-r-2 border-gray-300'>
-                <p class='text-5xl leading-none font-bold'>1</p>
-                <p class='text-2xl leading-none'>mazga</p>
+            <li class='text-center px-6 sm:px-16 border-r-2 border-gray-300'>
+                <p class='text-xl sm:text-5xl leading-none font-bold'>1</p>
+                <p class='text-sm sm:text-2xl leading-none'>mazga</p>
             </li>
-            <li class='text-center px-16'>
-                <p class='text-5xl leading-none font-bold'>2</p>
-                <p class='text-2xl leading-none'>Vesne</p>
+            <li class='text-center px-6 sm:px-16'>
+                <p class='text-xl sm:text-5xl leading-none font-bold'>2</p>
+                <p class='text-sm sm:text-2xl leading-none'>Vesne</p>
             </li>
         </ul>
     </div>
 
     <div class='bg-black bg-opacity-25 absolute inset-0 z-20'></div>
 
-    <video class='absolute inset-0 w-full h-full object-cover' poster="/static/images/hero-poster.png" id="bgvid" playsinline autoplay muted loop>
-        {# <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> #}
-        {# <source src="/static/videos/hero.mp4" type="video/mp4"> #}
+    <video class='absolute inset-0 w-full h-full min-h-screen object-cover' poster="/static/images/hero-poster.png" id="bgvid" playsinline autoplay muted loop>
         <source src="/static/videos/hero.webm" type="video/webm">
+        <source src="/static/videos/hero.mp4" type="video/mp4">
     </video>
 </header>
 
 {# ABOUT #}
 <section x-data='{ isVideoOpen: false }' class='min-h-screen relative bg-green text-white'>
     <div class='text-green absolute left-0 right-0 top-0 z-30'>
-        <svg class='fill-current transform -translate-y-10' viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
+        <svg class='fill-current transform -translate-y-2 sm:-translate-y-10' viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 16.7681L364.342 0L606.364 35.8599L979.404 9.58371L1272.93 35.8599L1440 16.7681V48H0V16.7681Z" />
         </svg>
     </div>
 
-    <div class='container mx-auto px-16 py-32 flex flex-wrap justify-between items-center'>
-        <div class='w-full'>
+    <div class='container mx-auto px-4 sm:px-16 py-16 sm:py-32 flex flex-wrap justify-between items-center'>
+        <div class='w-full sm:w-full'>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="146">
             <defs>
                 <path id="a" d="M0 0h99.948v145.451H0z"/>
@@ -74,28 +73,26 @@ footer: { title: 'Posetite nas', href: '/see' }
             </svg>
         </div>
 
-        <div class='w-5/12 p-8'>
+        <div class='w-full sm:w-5/12 mt-12 sm:mt-0 sm:p-8'>
             <h2 class='text-5xl leading-none'>Priča o Draževcu</h2>
-            <p class='text-xl mt-6 whitespace-breakspaces'>Prihvatilište Draževac je udruženje za zaštitu napuštenih, kako zdravih tako i bolesnih, invalidnih i starih životinja. Gospođa Vesna Grublješić Prokopljević je vlasnica Prihvatilišta. Prihvatilište se, uz pomoć divnih ljudi i donatora, trudi i uspeva da sve životinje koje stignu budu uhranjene, izlečene i dobijaju svu moguću ljubav i pažnju od strane gospođe Vesne, njene porodice ali i volontera. \n Životinje se udomljavaju isključivo uz ugovor o odgovornom vlasništu pri čemu prijatelj Prihvatilišta Leto d.o.o. donira udomitelju start paket za svakog udomljenog drugara.
-            </p>
-            {# <button class="mt-8 px-6 py-3 rounded-md bg-primary text-black font-bold min-w-button" type="submit">Pročitaj Vesninu priču</button> #}
+            <p class='text-xl mt-6 whitespace-breakspaces'>Prihvatilište Draževac je udruženje za zaštitu napuštenih, kako zdravih tako i bolesnih, invalidnih i starih životinja. Vesna Prokopljević je, zajedno sa svojom unukom, 2009. osnovala prihvatilište čiji je dom postao utočište za preko 300 životinja s teritorije cele Srbije. Naš primarni cilj je da pružimo drugu šansu svim životinjama koje su napuštene ili koje se ne nalaze u adekvatnom okruženju, tako što dajemo sve od sebe da ih izlečimo, uhranimo i uz puno vremena i sreće, udomimo.</p>            
         </div>
 
-        <div class='w-7/12 p-8'>
+        <div class='w-full sm:w-7/12 p-8'>
             <figure>
                 <img class='w-full h-full object-contain' src="/static/images/group-4@3x.png" alt="">
             </figure>
         </div>
 
-        <div class='w-4/12 mt-24'>
+        <div class='hidden sm:block w-full sm:w-4/12 mt-24'>
             <figure>
                 <img class='w-full h-full object-contain' src="/static/images/group-2@3x.png" alt="">
             </figure>
         </div>
 
-        <div class='w-4/12 mt-24 flex flex-col justify-end items-end p-8 text-yellow'>
-            <div>
-                <p class='text-right text-3xl mr-16 mb-2'>pogledaj <br/> video</p>
+        <div class='w-full sm:w-4/12 order-last sm:order-none mt-4 sm:mt-24 flex sm:flex-col justify-center items-center sm:justify-end sm:items-end p-8 text-yellow'>
+            <div class='w-full'>
+                <p class='text-left sm:text-right text-2xl sm:text-3xl sm:mr-16 mb-2'>pogledaj <br/> video</p>
             </div>
 
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="44" viewBox="0 0 97 44">
@@ -118,7 +115,7 @@ footer: { title: 'Posetite nas', href: '/see' }
             </svg>
         </div>
 
-        <div @click='isVideoOpen = true' class='w-4/12 relative mt-24 group cursor-pointer'>
+        <div @click='isVideoOpen = true' class='w-full sm:w-4/12 relative mt-24 group cursor-pointer'>
             <figure class='aspect-w-1 aspect-h-1'>
                 <img class='w-full h-full object-cover' src="/static/images/vesna.png" alt="">
             </figure>
@@ -145,34 +142,27 @@ footer: { title: 'Posetite nas', href: '/see' }
             </video>
         </div>
     </div>
-
-    <div class='absolute left-0 right-0 bottom-0 z-40 transform translate-y-1 text-blue'>
-        <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 51">
-            <path d="M0 828.5L364.342 811 606.364 848.425 979.404 821.002 1272.929 848.425 1440 828.5 1440 861.095 0 861.095z" transform="translate(0 -811)" />
-        </svg>
-    </div>
 </section>
 
 {# ADOPT #}
 <section class='min-h-screen relative bg-blue text-white'>
-    <div class='text-blue absolute left-0 right-0 top-0'>
-        <svg class='fill-current transform -translate-y-10' viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 16.7681L364.342 0L606.364 35.8599L979.404 9.58371L1272.93 35.8599L1440 16.7681V48H0V16.7681Z" />
+    <div class='absolute left-0 right-0 top-0 z-40 transform -translate-y-3 sm:-translate-y-10 text-blue'>
+        <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 51">
+            <path d="M0 828.5L364.342 811 606.364 848.425 979.404 821.002 1272.929 848.425 1440 828.5 1440 861.095 0 861.095z" transform="translate(0 -811)" />
         </svg>
     </div>
 
-    <div class='container mx-auto px-16  pt-16 relative'>
+    <div class='container mx-auto px-4 sm:px-16 pt-16 relative'>
         <div class='flex justify-end pr-16'>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="85" viewBox="0 0 120 85">
                 <path fill="#F6DE7C" d="M118.256 83.953c1.814-18.807 1.752-37.795-.185-56.591-9.384 8.147-19.7 15.22-30.681 21.038-1.965-15.085-4.868-30.048-8.687-44.773l-19.878 28.11C54.877 21.288 51.295 10.7 48.089 0L26.882 29.18 16.99 3.194C13.029 11.449-1.988 32.274.22 41.347c2.272 9.334 21.261 11.81 28.8 14.21 9.06 2.885 85.445 32.817 89.236 28.396" mask="url(#7mbcbmyjdb)"/>
             </svg>
         </div>
 
-        <h2 class='text-6xl font-light text-center'>Njuške koje traže dom</h2>
-
-        <ul class='grid grid-cols-4 gap-8 mt-8'>
+        <h2 class='text-5xl sm:text-6xl font-light text-center'>Njuške u potrazi za domom</h2>
+        <ul class='grid grid-cols-1 sm:grid-cols-4 gap-8 sm:mt-8 mt-16'>
             {% for animal in animals %}
-                <li>
+                <li class='list-none mt-6 sm:mt-0'>
                     <a href="/adopt/animals/{{ animal.href }}">
                         <figure class='aspect-w-1 aspect-h-1'>
                             <img class='w-full h-full object-cover rounded-xl shadow-yellow-lg' src="{{ animal.image }}" alt="">
@@ -185,13 +175,15 @@ footer: { title: 'Posetite nas', href: '/see' }
         </ul>
 
         <div class='flex justify-center items-center'>
-            <a href='adopt' class='text-center mt-16 mb-32 inline-flex justify-center items-center btn bg-yellow text-black text-2xl shadow-btn-yellow-lg hover:shadow-btn-yellow-sm transition duration-500 ease-in-out'>
-                <span class='mr-4'>
+            <a href='adopt' class='w-full sm:w-auto sm:text-center mt-16 mb-32 px-8 sm:px-32 py-2 btn flex sm:inline-flex justify-between items-center  bg-yellow text-black text-2xl  shadow-btn-yellow-lg hover:shadow-btn-yellow-sm transition duration-500 ease-in-out'>
+                <p class='block w-full mr-4'>
                     Obidji sve drugare
-                </span>
-                <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="23">
+                </p>
+                <div class=''>
+                <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="23">
                     <path  d="M29.437 9.864c-1.222-1.794-3.522-3.051-5.311-4.384L17.419.484c-2.115-1.576-5.197 1.064-3.08 2.694 1.896 1.458 3.79 2.917 5.685 4.376.562.432 1.204.868 1.86 1.313L2.105 8.68c-2.804-.027-2.806 3.784 0 3.81l19.996.19c-.641.462-1.286.92-1.918 1.392a90.756 90.756 0 00-3.007 2.34c-.072.057-.143.116-.215.175a60.745 60.745 0 00-1.928 1.643c-1.96 1.755 1.115 4.45 3.08 2.694.401-.36.813-.712 1.227-1.061.227-.191.455-.38.685-.569.129-.106.26-.21.39-.316a108.725 108.725 0 014.214-3.202c1.689-1.12 4.43-2.459 4.962-4.163.043-.136.069-.27.082-.402a1.631 1.631 0 00-.235-1.347" />
                 </svg>
+                </div>
             </a>
         </div>
 
@@ -223,21 +215,26 @@ footer: { title: 'Posetite nas', href: '/see' }
         </svg>
     </div>
 
-    <div class='container mx-auto flex items-center px-16 pt-40'>
-        <div class='w-5/12 ml-12 pr-8'>
-            <h2 class='text-6xl font-light leading-none'>Kako još mogu da pomognem?</h2>
+    <div class='container mx-auto flex items-center flex-wrap px-4 sm:px-16 pt-40'>
+        <div class='w-full sm:w-5/12 sm:ml-12 pr-8'>
+            <h2 class='text-5xl sm:text-6xl font-light leading-none'>Kako još mogu da pomognem?</h2>
             <p class='mt-6'>Prihvatilište trenutno opstaje uz pomoć drugih ljudi i donacija. Granule su nam uvek dobrodošle a ukoliko ste u prilici mozete pružiti i novčanu donaciju. Svaka pomoć je dobrodošla!</p>
-            <a href='/donate' class='mt-12 inline-flex justify-center items-center btn bg-green text-white text-2xl shadow-btn-green-lg hover:shadow-btn-green-sm transition duration-500 ease-in-out'>
-                <span class='mr-4'>
-                    Doniraj
-                </span>
-                <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="23">
-                    <path  d="M29.437 9.864c-1.222-1.794-3.522-3.051-5.311-4.384L17.419.484c-2.115-1.576-5.197 1.064-3.08 2.694 1.896 1.458 3.79 2.917 5.685 4.376.562.432 1.204.868 1.86 1.313L2.105 8.68c-2.804-.027-2.806 3.784 0 3.81l19.996.19c-.641.462-1.286.92-1.918 1.392a90.756 90.756 0 00-3.007 2.34c-.072.057-.143.116-.215.175a60.745 60.745 0 00-1.928 1.643c-1.96 1.755 1.115 4.45 3.08 2.694.401-.36.813-.712 1.227-1.061.227-.191.455-.38.685-.569.129-.106.26-.21.39-.316a108.725 108.725 0 014.214-3.202c1.689-1.12 4.43-2.459 4.962-4.163.043-.136.069-.27.082-.402a1.631 1.631 0 00-.235-1.347" />
-                </svg>
-            </a>
+            <div class='flex justify-center items-center'>
+                <a href='adopt' class='w-full sm:text-center mt-16 mb-32 px-8 sm:px-32 py-2 btn flex sm:inline-flex justify-center items-center text-white bg-green text-2xl  shadow-btn-green-lg hover:shadow-btn-green-sm transition duration-500 ease-in-out'>
+                    <p class='block w-full mr-4'>
+                        Doniraj
+                    </p>
+                    <div class=''>
+                    <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="23">
+                        <path  d="M29.437 9.864c-1.222-1.794-3.522-3.051-5.311-4.384L17.419.484c-2.115-1.576-5.197 1.064-3.08 2.694 1.896 1.458 3.79 2.917 5.685 4.376.562.432 1.204.868 1.86 1.313L2.105 8.68c-2.804-.027-2.806 3.784 0 3.81l19.996.19c-.641.462-1.286.92-1.918 1.392a90.756 90.756 0 00-3.007 2.34c-.072.057-.143.116-.215.175a60.745 60.745 0 00-1.928 1.643c-1.96 1.755 1.115 4.45 3.08 2.694.401-.36.813-.712 1.227-1.061.227-.191.455-.38.685-.569.129-.106.26-.21.39-.316a108.725 108.725 0 014.214-3.202c1.689-1.12 4.43-2.459 4.962-4.163.043-.136.069-.27.082-.402a1.631 1.631 0 00-.235-1.347" />
+                    </svg>
+                    </div>
+                </a>
+            </div>
+
         </div>
 
-        <div class='grid grid-cols-2 gap-x-24 gap-y-12 ml-24'>
+        <div class='w-full mt-8 sm:mt-0 sm:w-auto grid grid-cols-2 sm:gap-x-24 sm:gap-y-12 sm:ml-24'>
             <div class='text-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="151" height="150">
                     <g fill="none" fill-rule="evenodd">
@@ -302,11 +299,11 @@ footer: { title: 'Posetite nas', href: '/see' }
 
 {# FEED #}
 <section class='relative bg-white text-black py-24'>
-    <div class='container mx-auto px-16'>
+    <div class='container mx-auto px-4 sm:px-16'>
         <header class='w-full flex justify-between items-center'>
             <div>
-                <h2 class='text-5xl font-light leading-none'>@prihvatiliste.drazevac</h2>
-                <a href='https://www.instagram.com/explore/tags/zagrljajzanjus%CC%8Cke/' target='_tab' class='block text-5xl font-light leading-none text-red'>#zagrljajzanjuske</a>
+                <h2 class='text-4xl sm:text-5xl font-light leading-none'>@prihvatiliste.drazevac</h2>
+                <a href='https://www.instagram.com/explore/tags/zagrljajzanjus%CC%8Cke/' target='_tab' class='block text-4xl sm:text-5xl font-light leading-none text-red'>#zagrljajzanjuske</a>
             </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="195">
@@ -328,8 +325,8 @@ footer: { title: 'Posetite nas', href: '/see' }
 </section>
 
 {# SOCIAL PROOF #}
-<section class='relative bg-white text-black pt-24 pb-64'>
-    <div class='container mx-auto grid grid-cols-2 gap-8 px-16 pt-40'>
+<section class='relative bg-white text-black pt-12 sm:pt-24 pb-64'>
+    <div class='container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 sm:px-16 pt-40'>
         <div>
             <h3 class='text-2xl'>Prijatelji</h3>
             <ul class='grid grid-cols-3 gap-4 mt-4'>
@@ -343,7 +340,7 @@ footer: { title: 'Posetite nas', href: '/see' }
             </ul>
         </div>
 
-        <div>
+        <div class='mt-8 sm:mt-0'>
             <h3 class='text-2xl'>Pišu o Draževcu</h3>
              <ul class='grid grid-cols-3 gap-4 mt-4'>
                 {% for post in about.presskit %}
@@ -357,3 +354,4 @@ footer: { title: 'Posetite nas', href: '/see' }
         </div>
     </div>
 </section>
+        

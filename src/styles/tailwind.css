@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer components {
+  .btn {
+    /* width: 446px; */
+    /* height: 65px; */
+    /* margin: 0 0 2px; */
+    /* @apply  */
+    /* px-32 py-2 sm:px-8; */
+    border-radius: 14px;
+  }
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+
 @font-face {
   font-family: "Aniara";
   src: url("static/fonts/Aniara-Bold.ttf") format("truetype");
@@ -43,13 +58,6 @@ h6 {
   white-space: break-spaces;
 }
 
-.btn {
-  /* width: 446px; */
-  /* height: 65px; */
-  /* margin: 0 0 2px; */
-  @apply px-32 py-2;
-  border-radius: 14px;
-}
 
 .range__slider {
   position: relative;
