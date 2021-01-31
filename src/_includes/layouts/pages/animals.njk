@@ -1,31 +1,29 @@
 ---
 layout: base
 theme: dark
+footer: { title: 'Posetite nas', href: '/see' }
 ---
 
-<section class='min-h-screen flex flex-col justify-center bg-white text-black px-16 pb-32'>
-    <div class='container mx-auto py-16'>
+<section class='min-h-screen bg-white text-black '>
+    <div class='container mx-auto px-4 sm:px-16 py-16'>
         <header>
-            <h1 class='text-7xl leading-none mt-32'>
+            <h1 class='text-6xl sm:text-7xl leading-none mt-32'>
                 {{ metadata['en'].page.animals.headline }}
             </h1>
         </header>
 
-        <div>
-
-        <ul class='grid grid-cols-4 gap-8 mt-8'>
+        <ul class='grid grid-cols-1 sm:grid-cols-4 gap-4 sm:gap-8 mt-8'>
             {% for animal in animals %}
                 <li>
                     <a href="{{ animal.href }}">
                         <figure class='aspect-w-1 aspect-h-1'>
                             <img class='w-full h-full object-cover rounded-xl shadow-yellow-lg' src="{{ animal.image }}" alt="">
                         </figure>
-                        <p class='text-3xl mt-4'>{{ animal.name }}</p>
+                        <p class='text-2xl sm:text-3xl mt-4'>{{ animal.name }}</p>
                         <p class='opacity-75'>{{ animal.age }}</p>
                     </a>
                 </li>
             {%endfor%}
         </ul>
-        </div>
     </div>
 </section>

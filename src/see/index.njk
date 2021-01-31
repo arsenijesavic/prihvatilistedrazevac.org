@@ -4,43 +4,52 @@ theme: dark
 footer: { title: 'Udomi', href: '/adopt' }
 ---
 
-<section class='min-h-screen bg-white text-black px-16 py-16'>
-    <div class='container mx-auto grid grid-cols-12 gap-4 justify-between items-center mt-16'>
-        <div class='col-span-7 pr-32'>
-            <h1 class='text-7xl font-normal leading-none'>
-                {{ metadata['en'].page.visit.headline }}
-            </h1>
-            <div class='text-xl'>
-                <p>Draževac 330A, 18223 Draževac, Srbija</p>
-                <p>065/878-01-77 - Vesna Grublješić Prokopljević </p>
-            </div>
-            <p class='mt-6 text-xl'>
-                {{ metadata['en'].page.visit.summary }}
-            </p>
-        </div>
+<section class='min-h-screen'>
+    <div class='container mx-auto px-4 sm:px-16 py-16 sm:py-32'>
+        <div class='grid grid-cols-1 sm:grid-cols-12 gap-4 justify-between items-center mt-16'>
+            <div class='sm:col-span-7 sm:pr-32'>
+                <h1 class='text-6xl sm:text-7xl font-medium leading-none'>
+                    {{ metadata['en'].page.visit.headline }}
+                </h1>
 
-        <div class='col-span-5'>
-            <figure>
-                <img src="/static/images/group@3x.png" alt="">
-            </figure>
+                <div class='text-xl sm:text-2xl mt-4 font-light'>
+                    <a target='_tab' href="http://maps.google.com/?q=Veverički kraj 47, Draževac, Srbija">Ulica: <span class='text-blue'> Veverički kraj 47, Draževac, Srbija </span></a>
+                    {# <p>Ulica: Veverički kraj 47, Draževac, Srbija</p> #}
+                    <p>Kontakt: +38161 210-92-87 - Vesna Grublješić Prokopljević </p>
+                </div>
+
+                <p class='mt-6 text-xl'>
+                    {{ metadata['en'].page.visit.summary }}
+                </p>
+            </div>
+
+            <div class='sm:col-span-5 order-first sm:order-last'>
+                <figure>
+                    <img src="/static/images/group@3x.png" alt="">
+                </figure>
+            </div>
         </div>
     </div>
 </section>
 
 
-<div class='w-full h-560px mb-2' id="map"></div>
- <script>
-      function initMap() {
-        new google.maps.Map(document.getElementById("map"), {
-          mapId: "c50bcbffffa774a",
-          center: { lat: 44.588072, lng: 20.2033808 },
-          zoom: 12,
-        });
-      }
 
+<section id="map" class='w-full h-560px mb-2' ></section>
+
+<script>
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById("map"), {
+        mapId: "c50bcbffffa774a",
+        center: { lat: 44.596494, lng: 20.25504},
+        zoom: 10,
+        });
+
+        var marker = new google.maps.Marker({
+            title: "Draževac",
+            position: { lat: 44.5964978, lng: 20.2528513 },
+            map,
+        });
+    }
 </script>
 
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-XrMA2aRtC7rVDTe7ZzvcesQLsRgJ6IU&callback=initMap&libraries=&v=beta&map_ids=c50bcbffffa774a" defer></script>
-
-
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-XrMA2aRtC7rVDTe7ZzvcesQLsRgJ6IU&callback=initMap&libraries=&v=beta&map_ids=c50bcbffffa774a" defer></script>

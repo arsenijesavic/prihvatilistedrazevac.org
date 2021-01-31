@@ -220,7 +220,7 @@ module.exports = {
     },
     boxShadow: {
       "btn-yellow-lg": "9px 9px 0 0 #9b8838",
-      "btn-yellow-sm": "4px 4px 0 0 #9b8838",
+      "btn-yellow-sm": "5px 5px 0 0 #9b8838",
 
       "yellow-lg": "9px 9px 0 0 #f6de7c",
 
@@ -768,7 +768,7 @@ module.exports = {
     borderRadius: ["responsive"],
     borderStyle: ["responsive"],
     borderWidth: ["responsive"],
-    boxShadow: ["responsive", "hover", "focus"],
+    boxShadow: ["responsive", "hover", "focus","active"],
     boxSizing: ["responsive"],
     container: ["responsive"],
     cursor: ["responsive"],
@@ -851,7 +851,7 @@ module.exports = {
     gridRowEnd: ["responsive"],
     transform: ["responsive"],
     transformOrigin: ["responsive"],
-    scale: ["responsive", "hover", "focus"],
+    scale: ["responsive", "hover", "focus","active"],
     rotate: ["responsive", "hover", "focus"],
     translate: ["responsive", "hover", "focus"],
     skew: ["responsive", "hover", "focus"],

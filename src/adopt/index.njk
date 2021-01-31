@@ -1,41 +1,46 @@
 ---
 layout: layouts/base.njk
+theme: dark
 footer: { title: 'Posetite nas', href: '/see' }
 ---
 
-<section class='bg-blue text-white p-16'>
-    <div class='container mx-auto'>
-        <figure class='mt-24'>
+{% import 'components/index.njk' as components %}
+
+<header class='bg-blue text-white sm:p-16'>
+
+    <div class='container mx-auto px-4 sm:px-16'>
+        {# <figure class='mt-24'>
             <img src="/static/images/adopt@3x.png" alt="">
-        </figure>
-        <div class='flex justify-center items-center space-x-32 mt-16'>
+        </figure> #}
+
+        <div class='w-full flex justify-between sm:justify-center items-center sm:space-x-32 py-32 sm:py-0 sm:mt-16'>
             <a href='/adopt/animals?animal=dog' class='block text-center'>
-                <figure class='w-48'>
+                <figure class='w-32 p-4 sm:w-48 sm:p-0'>
                     <img class='w-full h-full object-contain shadowed-green transition all ease-in duration-100' src="/static/images/dog@3x.png" alt="">
                 </figure>
-                <p class='text-4xl mt-4'>Udomi psa</p>
+                <p class='text-xl sm:text-4xl mt-4'>Udomi psa</p>
             </a>
+
             <a href='/adopt/animals?animal=cat' class='block text-center'>
-                <figure class='w-48'>
+                <figure class='w-32 p-4 sm:w-48 sm:p-0'>
                     <img class='w-full h-full object-contain shadowed-pink transition all ease-in duration-100' src="/static/images/cat@3x.png" alt="">
                 </figure>
-                <p class='text-4xl mt-4'>Udomi mačku</p>
+                <p class='text-xl sm:text-4xl mt-4'>Udomi mačku</p>
             </a>
         </div>
     </div>
-</section>
+</header>
 
-<section class='relative bg-white text-black pt-16 mb-64'>
-     <div class='container mx-auto px-16'>
-        <h2 class='text-4xl font-light text-center'>Zašto udomiti?</h2>
-    </div>
-</section>
+{# PROCESS #}
+<section class='bg-white relative pt-32 '>
+    {{ components.wave('white') }}
 
-<section class='relative bg-white text-black pt-16 mb-64'>
-     <div class='container mx-auto px-16'>
-        <h2 class='text-4xl font-light text-center'>Procedura udomljavanja</h2>
-        <ul class='grid grid-cols-3 gap-8 mt-16'>
-            <li class='flex flex-col justify-center items-center text-center'>
+     <div class='container mx-auto px-4 sm:px-16'>
+        <h2 class='text-5xl sm:text-6xl font-light text-center'>Procedura udomljavanja</h2>
+        
+        <ul class='grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16'>
+
+            <li class='flex flex-col items-center text-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="119" height="119" viewBox="0 0 119 119">
                     <defs>
                         <path id="a7tybu3xca" d="M0.001 0.001L118.283 0.001 118.283 118.285 0.001 118.285z"/>
@@ -51,12 +56,14 @@ footer: { title: 'Posetite nas', href: '/see' }
                         </g>
                     </g>
                 </svg>
+
                 <div>
-                    <p class='mt-4 text-xl'>1 - Dolazak</p>
-                    <p class='mt-2'>Nalazimo se u Draževcu, malom naseljenom mestu na opštini Obrenovac</p>
+                    <p class='mt-4 text-xl'>1 - Dolazak i upoznavanje</p>
+                    <p class='mt-2'>Nalazimo se u Draževcu, malom naseljenom mestu na opštini Obrenovac.</p>
                 </div>
             </li>
-            <li class='flex flex-col justify-center items-center text-center'>
+
+            <li class='flex flex-col items-center text-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="119" height="119" viewBox="0 0 119 119">
                     <g fill="none" fill-rule="evenodd">
                         <g fill="#010202">
@@ -68,12 +75,14 @@ footer: { title: 'Posetite nas', href: '/see' }
                         </g>
                     </g>
                 </svg>
+
                 <div>
                     <p class='mt-4 text-xl'>2 - Potpisivanje ugovora</p>
-                    <p class='mt-2'>Potpisivanjem ugovora se obavezujete na potpunu odgovornost za udomljenu zivotinju</p>
+                    <p class='mt-2'>Potpisivanjem ugovora se obavezujete na potpunu odgovornost za dobrobit udomljene životinje.</p>
                 </div>
             </li>
-            <li class='flex flex-col justify-center items-center text-center'>
+
+            <li class='flex flex-col items-center text-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="119" height="119" viewBox="0 0 119 119">
                     <defs>
                         <path id="enbsnenp1a" d="M0.001 0.001L118.285 0.001 118.285 118.285 0.001 118.285z"/>
@@ -89,44 +98,120 @@ footer: { title: 'Posetite nas', href: '/see' }
                         </g>
                     </g>
                 </svg>
+
                 <div>
-                    <p class='mt-4 text-xl'>3 - Preuzimanje drugara</p>
-                    <p class='mt-2'>Kompanjoni za život!</p>
+                    <p class='mt-4 text-xl'>3 - Preuzimanje njuške</p>
+                    <p class='mt-2'>Prijatelji za ceo život.</p>
                 </div>
             </li>
         </ul>
     </div>
 </section>
 
-<section class='relative bg-white text-black mt-64'>
-    <div class='container mx-auto px-16'>
+{# THANK YOU #}
+<section class='bg-white relative mt-48'>
+    <div class='container mx-auto px-4 sm:px-16'>
         <header class='w-full flex justify-center items-center'>
-            <h2 class='text-5xl font-light leading-none'>Hvala vam!</h2>
+            <h2 class='text-5xl sm:text-6xl font-light text-center'>Hvala vam!</h2>
         </header>
 
         <div class='mt-8'>
-            <ul class='grid grid-cols-4 gap-2'>
-                <li class=' aspect-w-1 aspect-h-1'>
-                    <div class='w-full h-full rounded-xl bg-gray-300'></div>
+            <ul class='grid grid-cols-1 sm:grid-cols-4 gap-4'>
+                <li class='aspect-w-1 aspect-h-1'>
+                    <div class='w-full h-full rounded-xl overflow-hidden bg-gray-300'>
+                        <img class='w-full h-full object-cover' src="/static/images/adopted-1.jpg" alt="">
+                    </div>
                 </li>
                 <li class=' aspect-w-1 aspect-h-1'>
-                    <div class='w-full h-full rounded-xl bg-gray-300'></div>
+                    <div class='w-full h-full rounded-xl overflow-hidden bg-gray-300'>
+                        <img class='w-full h-full object-cover' src="/static/images/adopted-2.jpg" alt="">  
+                    </div>
                 </li>
                 <li class=' aspect-w-1 aspect-h-1'>
-                    <div class='w-full h-full rounded-xl bg-gray-300'></div>
+                    <div class='w-full h-full rounded-xl overflow-hidden bg-gray-300'>
+                        <img class='w-full h-full object-cover' src="/static/images/adopted-3.jpg" alt="">  
+                    </div>
                 </li>
                 <li class=' aspect-w-1 aspect-h-1'>
-                    <div class='w-full h-full rounded-xl bg-gray-300'></div>
+                    <div class='w-full h-full rounded-xl overflow-hidden bg-gray-300'>
+                        <img class='w-full h-full object-cover' src="/static/images/adopted-4.jpg" alt="">  
+                    </div>
                 </li>
             </ul>
         </div>
     </div>
 </section>
 
-<section class='relative bg-white text-black mt-64 mb-64'>
-    <div class='container mx-auto px-16'>
+{# FAQ #}
+<section class='relative my-64'>
+    <div class='hidden sm:block absolute pl-16' style='top:192px; left:0px;'>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="85" viewBox="0 0 120 85">
+            <defs>
+                <path id="bqlncuz4va" d="M0 0L119.572 0 119.572 84.398 0 84.398z"/>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <g>
+                    <g transform="translate(-40 -2482) translate(40 2482)">
+                        <mask id="t3yx5bug3b" fill="#fff">
+                            <use xlink:href="#bqlncuz4va"/>
+                        </mask>
+                        <path fill="#F6DE7C" d="M117.256 83.953c1.814-18.807 1.752-37.795-.185-56.591-9.384 8.147-19.7 15.22-30.681 21.038-1.965-15.085-4.868-30.048-8.687-44.773l-19.878 28.11C53.877 21.288 50.295 10.7 47.089 0L25.882 29.18 15.99 3.194C12.029 11.449-2.988 32.274-.78 41.347c2.272 9.334 21.261 11.81 28.8 14.21 9.06 2.885 85.445 32.817 89.236 28.396" mask="url(#t3yx5bug3b)"/>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <div class='hidden sm:block absolute pr-16' style='top:448px; right:0px;'>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="94" viewBox="0 0 90 94">
+            <defs>
+                <path id="ykypa1pvma" d="M0 0L89.481 0 89.481 93.431 0 93.431z"/>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <g>
+                    <g transform="translate(-1300 -2725) translate(1300 2725)">
+                        <mask id="xcoo82fihb" fill="#fff">
+                            <use xlink:href="#ykypa1pvma"/>
+                        </mask>
+                        <path fill="#6F94CC" d="M38.85 3.724c-.979-1.967-2.773-3.9-4.962-3.71-.935.08-1.791.546-2.574 1.063-4.547 3.004-7.578 8.191-7.962 13.627-3.302-3.45-7.499-6.395-12.26-6.78-4.76-.385-9.99 2.526-10.935 7.207-1.202 5.957 4.7 11.13 10.573 12.692 3.698.982 7.652 1.15 11.097 2.815 2.995 1.448 5.357 3.91 7.64 6.33 11.655 12.368 23.007 25.02 34.043 37.943-4.306 1.845-4.164 8.012-2.698 12.46.905 2.748 2.59 5.847 5.476 6.05 1.454.102 2.845-.603 4.027-1.454 5.839-4.201 8.07-12.731 5.039-19.254 1.913 3.39 6.776 4.606 10.162 2.683 3.384-1.923 4.858-6.53 3.41-10.144-1.449-3.613-5.519-5.908-9.389-5.492-2.872.309-5.77 1.909-8.498.956-1.275-.447-2.297-1.4-3.277-2.33C56.415 47.653 42.95 36.33 33.935 23.576c5.416-5.033 8.455-12.732 4.914-19.852" mask="url(#xcoo82fihb)"/>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <div class='hidden sm:block absolute pl-16' style='top:896px; left:0px;'>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="89" height="68" viewBox="0 0 89 68">
+            <defs>
+                <path id="luifh30kpa" d="M0.05 0.151L57.579 0.151 57.579 43.544 0.05 43.544z"/>
+                <path id="0ih4zv2xvc" d="M0.155 0.306L88.286 0.306 88.286 55 0.155 55z"/>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <g>
+                    <g>
+                        <path fill="#D46B62" d="M2.377 28.62C-.433 33.013.028 35.546.028 35.546s4.703 5.893 12.885 3.325c8.182-2.567 53.36-17.154 53.36-17.154l7.867-5.661s3.71-2.498 2.408-4.13c-1.302-1.633-18.14-7.378-38.19-.686-20.049 6.692-35.98 17.38-35.98 17.38" transform="translate(-55 -3197) translate(55 3197)"/>
+                        <g transform="translate(-55 -3197) translate(55 3197) translate(11 .85)">
+                            <mask id="f0uv3e7gqb" fill="#fff">
+                                <use xlink:href="#luifh30kpa"/>
+                            </mask>
+                            <path fill="#E5A74D" d="M.786 35.115c-2.039-11.792.595-12.979 2.592-14.376C1.04 16.022 5.815 4.553 14.598 9.282 17.144-1.72 27.744-2.485 32.351 5.402c9.747-8.026 15.93.741 15.955 4.223 4.787 1.426 7.813 8.925 9.24 14.695 1.427 5.77-45.893 19.224-45.893 19.224l-9.697-3.697-1.17-4.732z" mask="url(#f0uv3e7gqb)"/>
+                        </g>
+                        <g transform="translate(-55 -3197) translate(55 3197) translate(0 12.85)">
+                            <mask id="2opduojs0d" fill="#fff">
+                                <use xlink:href="#0ih4zv2xvc"/>
+                            </mask>
+                            <path fill="#F5A7B8" d="M.155 23.382s12.171 4.739 21.234 2.304c9.063-2.436 24.535-6.274 24.535-6.274s8.673-4.664 9.74-5.063C56.73 13.949 76.965.306 76.965.306l10.91 14.967.41 9.366s-6.364 10.219-11.08 13.245c-4.718 3.026-20.51 13.53-29.074 14.698C39.57 53.748 24.92 55.428 22.08 54.9c-2.84-.528-13.405-4.886-13.903-5.533-.497-.648-6.1-7.24-6.1-7.24L.155 23.383z" mask="url(#2opduojs0d)"/>
+                        </g>
+                        <path fill="#8F9035" d="M27.742 22.672c5.434 6.042 19.99-2.88 19.99-2.88" transform="translate(-55 -3197) translate(55 3197)"/>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+    
+    <div class='container mx-auto px-4 sm:px-16 pt-16 relative'>
         <header class='w-full flex justify-center items-center'>
-            <h2 class='text-5xl font-light leading-none'>Često postavljana pitanja</h2>
+            <h2 class='text-4xl sm:text-5xl font-light leading-none'>Često postavljena pitanja</h2>
         </header>
 
         <div class='mt-8 max-w-screen-sm mx-auto'>
@@ -134,7 +219,7 @@ footer: { title: 'Posetite nas', href: '/see' }
             {% for item in metadata['en'].page.adopt.faq %}
                 <li @click='openIndex === {{ loop.index }} ? openIndex = -1 : openIndex = {{ loop.index }}' class='py-6 border-gray-300 border-b-1'>
                     <div class='flex justify-between items-center cursor-pointer'>
-                        <p class='text-3xl'>{{ item.question }}</p>
+                        <p class='text-xl sm:text-3xl'>{{ item.question }}</p>
                         <div :class="{ 'rotate-180': openIndex === {{ loop.index }} }" class='transform'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="15" viewBox="0 0 26 15">
                                 <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -145,7 +230,8 @@ footer: { title: 'Posetite nas', href: '/see' }
                             </svg>
                         </div>
                     </div>
-                    <div x-show.transition.opacity="openIndex === {{ loop.index }}">
+
+                    <div class='text-base sm:text-xl mt-6' x-show.transition.opacity="openIndex === {{ loop.index }}">
                         {{ item.answer }}
                     </div>
                 </li>
