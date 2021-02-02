@@ -16,7 +16,7 @@ footer: { title: 'Posetite nas', href: '/see' }
     ]
 %}
 
-<header class='min-h-screen relative bg-white text-white flex items-center'>
+ <header class='min-h-screen relative bg-white text-white flex items-center'>
     <div class='flex-1 container mx-auto relative z-30 px-4 sm:px-16'>
         <h1 class='text-6xl sm:text-7xl font-medium leading-none'>
             Prihvatilište <br/> Draževac
@@ -35,7 +35,7 @@ footer: { title: 'Posetite nas', href: '/see' }
                     {{ stat.count }}
                 </p>
                 <p class='text-sm sm:text-xl leading-none'>
-                    {{stat.label}}
+                    {{ stat.label }}
                 </p>
             </li>
         {% endfor %}
@@ -134,13 +134,17 @@ footer: { title: 'Posetite nas', href: '/see' }
 
     <div x-show='isVideoOpen === true' class='fixed inset-0 z-50 overflow-y-hidden'>
         <button @click='isVideoOpen = false' class='fixed top-0 right-0 z-60 text-4xl p-8'> 
-            <img class='w-10 h-10 object-cover' src="/static/images/close-icon.png" alt=""/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+<path d="M17.8759 16.0087L31.593 2.29164C32.1224 1.78033 32.1371 0.936691 31.6258 0.40727C31.1145 -0.122151 30.2708 -0.136831 29.7414 0.374474C29.7303 0.385172 29.7194 0.396104 29.7086 0.40727L15.9914 14.1244L2.27434 0.407192C1.74491 -0.104113 0.901276 -0.0894331 0.38997 0.439988C-0.108842 0.956447 -0.108842 1.77518 0.38997 2.29164L14.1071 16.0087L0.38997 29.7258C-0.130316 30.2462 -0.130316 31.0898 0.38997 31.6102C0.910334 32.1304 1.75397 32.1304 2.27434 31.6102L15.9914 17.8931L29.7085 31.6102C30.238 32.1215 31.0816 32.1068 31.5929 31.5774C32.0916 31.0609 32.0916 30.2422 31.5929 29.7258L17.8759 16.0087Z" fill="white"/>
+</svg>
+            {# <img class='w-10 h-10 object-cover' src="/static/images/close-icon.png" alt=""/>#}
         </button>
 
 
         <div class='min-h-screen bg-black'>
             <video class='w-full object-contain' poster="/static/images/hero-poster.png" id="bgvid" controls >
                 <source src="/static/videos/about.webm" type="video/webm">
+                <source src="/static/videos/about.mp4" type="video/mp4">
             </video>
         </div>
     </div>
@@ -214,7 +218,7 @@ footer: { title: 'Posetite nas', href: '/see' }
 
             <div class='w-full sm:w-6/12 pr-8'>
                 <h2 class='text-5xl sm:text-6xl font-light leading-none'>Kako još mogu da pomognem?</h2>
-                <p class='text-xl mt-6 font-light'>S obzirom da su troškovi prihvatilišta ovolikog kapaciteta, već godinama opstajemo zahvaljujući pomoći, podršci i donacijama dobrih ljudi. Svako ko nije u mogućnosti da udomi životinju, podrži finansijski ili da donira hranu, može nam pomoći na druge načine. Uvek su nam potrebne kućice za pse kako bi lakše preživeli zimu, povremeni ili stalni volonteri kao i ljudi koji bi došli samo da maze sve te njuške željne ljubavi i pažnje. Naša želja je da ohrabrimo ljude da pomognu na svoj način i u sklopu svojih mogućnosti jer je svaka pomoć dobrodošla!</p>
+                <p class='text-xl mt-6 font-light'>S obzirom da su troškovi prihvatilišta ovolikog kapaciteta veliki, već godinama opstajemo zahvaljujući pomoći, podršci i donacijama dobrih ljudi. Svako ko nije u mogućnosti da udomi životinju, podrži finansijski ili da donira hranu, može nam pomoći na druge načine. Uvek su nam potrebne kućice za pse kako bi lakše preživeli zimu, povremeni ili stalni volonteri kao i ljudi koji bi došli samo da maze sve te njuške željne ljubavi i pažnje. Naša želja je da ohrabrimo ljude da pomognu na svoj način i u sklopu svojih mogućnosti jer je svaka pomoć dobrodošla!</p>
                 <div>
                     <a href='/adopt' class='w-full sm:w-auto sm:text-center mt-16 mb-32 px-8 sm:px-32 py-2 btn flex sm:inline-flex justify-between items-center bg-green text-white transform hover:scale-105 active:scale-90 shadow-btn-green-lg active:shadow-btn-green-sm transition-all duration-300 focus:outline-none text-2xl'>
                         <p class='block w-full mr-4'>
