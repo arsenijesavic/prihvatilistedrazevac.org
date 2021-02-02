@@ -13,7 +13,7 @@ module.exports = [
     href: "divcibarka",
     gender: "female",
     age: "4",
-    story: `Pronadjena sa štencima na ulici na Divčibarima. Štenci usvojeni ona ostala. Mirna i druželjubiva.`,
+    story: `Pronadjena sa štencima na ulici na Divčibarima. Štenci usvojeni ona ostala. Mirna i druželjubiva. Ima oko 4 godine.`,
   },
   {
     name: "Katja",
@@ -21,7 +21,7 @@ module.exports = [
     href: "katja",
     gender: "female",
     age: "1.5",
-    story: `Umro vlasnik pa je ostala bez doma, spašena s ulice. Jako vesela i druželjubiva.`,
+    story: `Umro vlasnik pa je ostala bez doma, spašena s ulice. Jako vesela i druželjubiva. Ima oko godinu ipo dana.`,
   },
 
   {
