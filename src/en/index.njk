@@ -1,0 +1,9 @@
+---
+layout: pages/index.njk  
+permalink: "/{{ locale }}/index.html"
+---
+
+{% set locale = 'en' %}
+{% set _data = site[locale].index %}
+{{ _data | debug }}
+
