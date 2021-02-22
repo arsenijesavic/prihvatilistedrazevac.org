@@ -6,6 +6,11 @@ module.exports = {
       href: "https://www.instagram.com/whatifness/",
     },
     { name: "HOOLOOVOO", logo: "/static/images/hooloovoo-logo.png", href: "https://hooloovoo.rs/hooloovoo-mi-razbijamo-software/attachment/hooloovoom" },
+    {
+      name: "Pako Nao",
+      logo: "/static/images/pakonao.png",
+      href: "https://www.instagram.com/pako.nao/",
+    },
 
     
   ],

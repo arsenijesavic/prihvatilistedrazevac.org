@@ -30,7 +30,6 @@
             </svg>
           </a>
         </div>
-
         <nav id='nav' class='hidden sm:flex items-center '>
           <ul class='flex justify-between space-x-20 text-base leading-none list-none'>
               {% for item in metadata[locale].navigation %}
@@ -198,7 +197,7 @@
 
         <nav class='w-8/12 sm:w-auto px-6 sm:px-0 text-center'>
           <ul class='flex justify-between space-x-8 sm:space-x-20 text-base leading-none list-none'>
-          {% for item in metadata['en'].navigation %}
+          {% for item in metadata[locale].navigation %}
             <li class='text-xs sm:text-2xl'>
               <a href="{{ item.href }}" class="font-normal hover:text-primary {{ 'text-primary border-b-2 border-primary' if '/grants' in page.url }}">
                 {{ item.title }}

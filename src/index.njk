@@ -2,19 +2,11 @@
 layout: layouts/base.njk
 theme: light
 footer: { title: 'Posetite nas', href: '/see' }
+locale: 'sr'
 ---
 
 {% import 'components/index.njk' as components %}
 
-{% 
-    set stats = [
-        { label: "pasa", count: 200 },
-        { label: "mačaka", count: 100 },
-        { label: "konj", count: 1 },
-        { label: "magarac", count: 1 },
-        { label: "Vesne", count: 2 }
-    ]
-%}
 
  <header class='min-h-screen relative bg-white text-white flex items-center'>
     <div class='flex-1 container mx-auto relative z-30 px-4 sm:px-16'>

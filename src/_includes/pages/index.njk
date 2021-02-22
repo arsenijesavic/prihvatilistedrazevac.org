@@ -1,21 +1,10 @@
 ---
 layout: layouts/base.njk
 theme: light
-footer: "site[locale].index.footer"
+
 ---
 
 {% import 'components/index.njk' as components %}
-
-{% 
-    set stats = [
-        { label: "pasa", count: 200 },
-        { label: "mačaka", count: 100 },
-        { label: "konj", count: 1 },
-        { label: "magarac", count: 1 },
-        { label: "Vesne", count: 2 }
-    ]
-%}
-
 
 {% set page = site[locale].index %}
 
@@ -173,7 +162,7 @@ footer: "site[locale].index.footer"
         <ul class='grid grid-cols-1 sm:grid-cols-4 gap-8 sm:mt-8 mt-16'>
             {% for animal in animals %}
                 <li class='list-none mt-6 sm:mt-0'>
-                    <a href="/adopt/animals/{{ animal.href }}">
+                    <a href="{% if locale == 'en'%}/en{% endif %}/adopt/animals/{{ animal.href }}">
                         <figure class='aspect-w-1 aspect-h-1'>
                             <img class='w-full h-full object-cover rounded-xl shadow-yellow-lg' src="{{ animal.image }}" alt="">
                         </figure>
@@ -185,7 +174,7 @@ footer: "site[locale].index.footer"
         </ul>
 
         <div class='flex justify-center items-center'>
-            <a href='/adopt' class='w-full sm:w-auto sm:text-center mt-16 mb-32 px-8 sm:px-32 py-2 btn flex sm:inline-flex justify-between items-center bg-yellow text-black transform hover:scale-105 active:scale-90 shadow-btn-yellow-lg active:shadow-btn-yellow-sm transition-all duration-300 focus:outline-none text-2xl'>
+            <a href='{% if locale == 'en'%}/en{% endif %}/adopt' class='w-full sm:w-auto sm:text-center mt-16 mb-32 px-8 sm:px-32 py-2 btn flex sm:inline-flex justify-between items-center bg-yellow text-black transform hover:scale-105 active:scale-90 shadow-btn-yellow-lg active:shadow-btn-yellow-sm transition-all duration-300 focus:outline-none text-2xl'>
                 <p class='block w-full mr-4'>{{page.adoptCTA}}</p>
                 <div class=''>
                 <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="23">
@@ -226,7 +215,7 @@ footer: "site[locale].index.footer"
                 <h2 class='text-5xl sm:text-6xl font-light leading-none'>{{page.donateTitle}}</h2>
                 <p class='text-xl mt-6 font-light'>{{page.donateSubtitle}}</p>
                 <div>
-                    <a href='/adopt' class='w-full sm:w-auto sm:text-center mt-16 mb-32 px-8 sm:px-32 py-2 btn flex sm:inline-flex justify-between items-center bg-green text-white transform hover:scale-105 active:scale-90 shadow-btn-green-lg active:shadow-btn-green-sm transition-all duration-300 focus:outline-none text-2xl'>
+                    <a href='{% if locale == 'en' %}/en{% endif %}/donate' class='w-full sm:w-auto sm:text-center mt-16 mb-32 px-8 sm:px-32 py-2 btn flex sm:inline-flex justify-between items-center bg-green text-white transform hover:scale-105 active:scale-90 shadow-btn-green-lg active:shadow-btn-green-sm transition-all duration-300 focus:outline-none text-2xl'>
                         <p class='block w-full mr-4'>{{page.donateCTA}}</p>
                         <div class=''>
                         <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="23">
