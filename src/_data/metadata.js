@@ -62,12 +62,12 @@ module.exports = {
     metaTitle: "Title in english",
     metaDescription: "Description in english",
     navigation: [
-      { title: "Udomi", href: "/adopt" },
-      { title: "Doniraj", href: "/donate" },
-      { title: "Poseti", href: "/see" },
-      // { title: "Adopt", href: "/adopt" },
-      // { title: "Donate", href: "/donate" },
-      // { title: "Visit", href: "/see" },
+      //{ title: "Udomi", href: "/adopt" },
+      //{ title: "Doniraj", href: "/donate" },
+      //{ title: "Poseti", href: "/see" },
+    { title: "Adopt", href: "/adopt" },
+   { title: "Donate", href: "/donate" },
+  { title: "Visit", href: "/see" },
     ],
   },
   sr: {

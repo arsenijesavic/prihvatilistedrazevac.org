@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 theme: light
-footer: { title: 'Posetite nas', href: '/see' }
+footer: "site[locale].index.footer"
 ---
 
 {% import 'components/index.njk' as components %}
@@ -16,20 +16,28 @@ footer: { title: 'Posetite nas', href: '/see' }
     ]
 %}
 
+
+{% set page = site[locale].index %}
+
+
+
  <header class='min-h-screen relative bg-white text-white flex items-center'>
     <div class='flex-1 container mx-auto relative z-30 px-4 sm:px-16'>
         <h1 class='text-6xl sm:text-7xl font-medium leading-none'>
-            Prihvatilište <br/> Draževac
+            {# Prihvatilište <br/> Draževac#}
+            {{ page.heroTitle | safe }}
         </h1>
 
         <p class='text-2xl sm:text-3xl mt-4 font-light'>
-            Privremena kuća za njuške <br/> koje traže stalni dom
+        {# Privremena kuća za njuške <br/> koje traže stalni dom #}
+            {{ page.heroSubtitle | safe }}
+
         </p>
     </div>
 
     <div class='absolute left-0 right-0 bottom-0 z-30 mb-8 sm:mb-20'>
         <ul class='flex justify-center items-center text-center px-4 sm:px-16'>
-        {% for stat in stats%}
+            {% for stat in page.heroStats  %}
             <li class='px-4 sm:px-16 {{ "border-r-0" if loop.last else "border-r-2" }} border-gray-300'>
                 <p class='text-base sm:text-3xl leading-none font-bold'>
                     {{ stat.count }}
@@ -71,8 +79,8 @@ footer: { title: 'Posetite nas', href: '/see' }
         </div>
 
         <div class='w-full sm:w-5/12 mt-12 sm:mt-0 '>
-            <h2 class='text-5xl leading-none'>Priča o Draževcu</h2>
-            <p class='text-xl mt-6 whitespace-breakspaces'>Prihvatilište Draževac je udruženje za zaštitu napuštenih, kako zdravih tako i bolesnih, invalidnih i starih životinja. Vesna Prokopljević je, zajedno sa svojom unukom, 2009. osnovala prihvatilište čiji je dom postao utočište za preko 300 životinja s teritorije cele Srbije. Naš primarni cilj je da pružimo drugu šansu svim životinjama koje su napuštene ili koje se ne nalaze u adekvatnom okruženju, tako što dajemo sve od sebe da ih izlečimo, uhranimo i uz puno vremena i sreće, udomimo. </p>
+            <h2 class='text-5xl leading-none'>{{page.aboutTitle}}</h2>
+            <p class='text-xl mt-6 whitespace-breakspaces'>{{page.aboutSummary}}</p>
         </div>
 
         <div class='w-full sm:w-7/12 py-16'>
@@ -90,7 +98,7 @@ footer: { title: 'Posetite nas', href: '/see' }
         {# VIDEO #}
         <div class='w-full sm:w-4/12 order-last sm:order-none mt-4 sm:mt-16 flex sm:flex-col justify-center items-center sm:justify-end sm:items-end p-8 text-yellow'>
             <div class='w-full'>
-                <p class='text-left sm:text-right text-2xl sm:text-3xl sm:mr-16 mb-2'>pogledaj <br/> video</p>
+                <p class='text-left sm:text-right text-2xl sm:text-3xl sm:mr-16 mb-2'>{{page.aboutCTA}}</p>
             </div>
 
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="44" viewBox="0 0 97 44">
@@ -161,7 +169,7 @@ footer: { title: 'Posetite nas', href: '/see' }
             </svg>
         </div>
 
-        <h2 class='text-5xl sm:text-6xl font-light text-center'>Njuške u potrazi za domom</h2>
+        <h2 class='text-5xl sm:text-6xl font-light text-center'>{{page.adoptTitle}}</h2>
         <ul class='grid grid-cols-1 sm:grid-cols-4 gap-8 sm:mt-8 mt-16'>
             {% for animal in animals %}
                 <li class='list-none mt-6 sm:mt-0'>
@@ -178,9 +186,7 @@ footer: { title: 'Posetite nas', href: '/see' }
 
         <div class='flex justify-center items-center'>
             <a href='/adopt' class='w-full sm:w-auto sm:text-center mt-16 mb-32 px-8 sm:px-32 py-2 btn flex sm:inline-flex justify-between items-center bg-yellow text-black transform hover:scale-105 active:scale-90 shadow-btn-yellow-lg active:shadow-btn-yellow-sm transition-all duration-300 focus:outline-none text-2xl'>
-                <p class='block w-full mr-4'>
-                    Obidji sve drugare
-                </p>
+                <p class='block w-full mr-4'>{{page.adoptCTA}}</p>
                 <div class=''>
                 <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="23">
                     <path  d="M29.437 9.864c-1.222-1.794-3.522-3.051-5.311-4.384L17.419.484c-2.115-1.576-5.197 1.064-3.08 2.694 1.896 1.458 3.79 2.917 5.685 4.376.562.432 1.204.868 1.86 1.313L2.105 8.68c-2.804-.027-2.806 3.784 0 3.81l19.996.19c-.641.462-1.286.92-1.918 1.392a90.756 90.756 0 00-3.007 2.34c-.072.057-.143.116-.215.175a60.745 60.745 0 00-1.928 1.643c-1.96 1.755 1.115 4.45 3.08 2.694.401-.36.813-.712 1.227-1.061.227-.191.455-.38.685-.569.129-.106.26-.21.39-.316a108.725 108.725 0 014.214-3.202c1.689-1.12 4.43-2.459 4.962-4.163.043-.136.069-.27.082-.402a1.631 1.631 0 00-.235-1.347" />
@@ -217,13 +223,11 @@ footer: { title: 'Posetite nas', href: '/see' }
         <div class="flex justify-between items-start flex-wrap">
 
             <div class='w-full sm:w-6/12 pr-8'>
-                <h2 class='text-5xl sm:text-6xl font-light leading-none'>Kako još mogu da pomognem?</h2>
-                <p class='text-xl mt-6 font-light'>S obzirom da su troškovi prihvatilišta ovolikog kapaciteta veliki, već godinama opstajemo zahvaljujući pomoći, podršci i donacijama dobrih ljudi. Svako ko nije u mogućnosti da udomi životinju, podrži finansijski ili da donira hranu, može nam pomoći na druge načine. Uvek su nam potrebne kućice za pse kako bi lakše preživeli zimu, povremeni ili stalni volonteri kao i ljudi koji bi došli samo da maze sve te njuške željne ljubavi i pažnje. Naša želja je da ohrabrimo ljude da pomognu na svoj način i u sklopu svojih mogućnosti jer je svaka pomoć dobrodošla!</p>
+                <h2 class='text-5xl sm:text-6xl font-light leading-none'>{{page.donateTitle}}</h2>
+                <p class='text-xl mt-6 font-light'>{{page.donateSubtitle}}</p>
                 <div>
                     <a href='/adopt' class='w-full sm:w-auto sm:text-center mt-16 mb-32 px-8 sm:px-32 py-2 btn flex sm:inline-flex justify-between items-center bg-green text-white transform hover:scale-105 active:scale-90 shadow-btn-green-lg active:shadow-btn-green-sm transition-all duration-300 focus:outline-none text-2xl'>
-                        <p class='block w-full mr-4'>
-                            Doniraj
-                        </p>
+                        <p class='block w-full mr-4'>{{page.donateCTA}}</p>
                         <div class=''>
                         <svg class='fill-current' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="23">
                             <path  d="M29.437 9.864c-1.222-1.794-3.522-3.051-5.311-4.384L17.419.484c-2.115-1.576-5.197 1.064-3.08 2.694 1.896 1.458 3.79 2.917 5.685 4.376.562.432 1.204.868 1.86 1.313L2.105 8.68c-2.804-.027-2.806 3.784 0 3.81l19.996.19c-.641.462-1.286.92-1.918 1.392a90.756 90.756 0 00-3.007 2.34c-.072.057-.143.116-.215.175a60.745 60.745 0 00-1.928 1.643c-1.96 1.755 1.115 4.45 3.08 2.694.401-.36.813-.712 1.227-1.061.227-.191.455-.38.685-.569.129-.106.26-.21.39-.316a108.725 108.725 0 014.214-3.202c1.689-1.12 4.43-2.459 4.962-4.163.043-.136.069-.27.082-.402a1.631 1.631 0 00-.235-1.347" />
@@ -246,7 +250,7 @@ footer: { title: 'Posetite nas', href: '/see' }
                             <path fill="#909136" d="M72.732 86.67c4.704 9.835 27.516 4.192 27.516 4.192"/>
                         </g>
                     </svg>
-                    <p class='text-2xl mt-4'>hrana</p>
+                    <p class='text-2xl mt-4'>{{page.donateTypes[0].title}}</p>
                 </div>
 
                 <div class='text-center'>
@@ -272,7 +276,7 @@ footer: { title: 'Posetite nas', href: '/see' }
                             <path stroke="#23B78E" stroke-width="1.899" d="M20.34 84.902c-1.657-.317-3.175-1.137-4.747-1.764s-3.315-1.066-4.934-.584c-2.476.734-4.01 3.822-3.137 6.312.338.963 1.073 1.868 2.06 2.018 1.103.168 2.106-.624 3.181-.931.693-.199 1.428-.194 2.142-.1a8.913 8.913 0 014.829 2.282c.43.398.856.858 1.42.998.336.084.692.042 1.027-.047 1.378-.367 2.46-1.51 3.113-2.81.58-1.157 2.072-4.782.755-5.687-1.006-.693-4.33.576-5.708.313z"/>
                         </g>
                     </svg>
-                    <p class='text-2xl mt-4'>napravi kućicu</p>
+                    <p class='text-2xl mt-4'>{{page.donateTypes[1].title}}</p>
                 </div>
 
                 <div class='col-span-full flex flex-col justify-center items-center'>
@@ -290,7 +294,7 @@ footer: { title: 'Posetite nas', href: '/see' }
                             <path fill="#23B78E" d="M133.547 109.741c-.309.529-.637 1.06-1.015 1.172-.295.095-.745-.016-1.258-.157-25.203-6.974-49.9-16.728-73.785-26.163-6.257-2.471-12.727-5.027-18.901-7.946-4.178-1.975-8.268-4.154-12.295-6.442 14.983 4.623 29.791 10.251 44.162 15.72 4.964 1.89 10.097 3.843 15.01 6.06 2.649 1.196 5.319 2.506 7.9 3.774 6.977 3.424 14.192 6.964 21.959 8.74 1.8.413 3.652.735 5.443 1.047 4.555.794 8.857 1.544 12.647 3.654l1.092-1.857c-4.12-2.294-8.813-3.112-13.351-3.904-1.763-.307-3.585-.624-5.327-1.022-7.514-1.719-14.61-5.201-21.472-8.57-2.598-1.274-5.284-2.593-7.967-3.804-4.974-2.245-10.139-4.21-15.133-6.11-16.16-6.15-32.87-12.51-49.808-17.425l-.227.743c-6.359-3.804-12.56-7.832-18.646-11.81a80.2 80.2 0 011.528-4.313l-.113 2.134c5.858.295 10.984 3.165 16.409 6.203 2.432 1.362 4.947 2.771 7.524 3.917 3.004 1.337 6.17 2.343 9.231 3.315 2.475.787 5.034 1.6 7.459 2.576 3.794 1.526 7.476 3.537 11.037 5.483 4.686 2.56 9.532 5.207 14.776 6.845 3.056.956 6.245 1.566 9.329 2.158 4.674.895 9.088 1.742 13.168 3.682 3.23 1.538 6.21 3.779 9.09 5.945 4.147 3.119 8.435 6.343 13.657 7.666 2.67.676 5.503.837 8.243.99 4.644.264 9.032.514 12.307 3.136l-2.673 4.563zM24.917 51.83c4.878 3.314 9.923 6.742 15.705 8.449 1.213.357 2.45.637 3.647.907 1.572.354 3.058.689 4.507 1.19 2.474.853 4.718 2.142 7.095 3.508 1.9 1.09 3.862 2.218 5.946 3.096 3.426 1.444 7.096 2.179 10.645 2.89 1.831.366 3.723.745 5.54 1.215a49.551 49.551 0 0114.845 6.568c1.458.959 2.9 2.019 4.293 3.044 2.296 1.69 4.671 3.436 7.26 4.839 4.343 2.351 9.124 3.666 13.748 4.936l21.973 6.044-2.81 4.798c-3.785-2.848-8.6-3.143-13.27-3.407-2.634-.15-5.358-.304-7.817-.926-4.788-1.213-8.712-4.164-12.866-7.288-2.97-2.233-6.039-4.541-9.469-6.174-4.34-2.064-9.102-2.977-13.709-3.86-3.022-.58-6.147-1.178-9.082-2.096-5.033-1.573-9.78-4.166-14.372-6.674-3.618-1.975-7.359-4.019-11.273-5.594-2.502-1.007-5.103-1.833-7.616-2.632-3.004-.954-6.11-1.941-9.002-3.228-2.48-1.103-4.95-2.487-7.34-3.824-5.41-3.03-11.006-6.165-17.391-6.487A80.335 80.335 0 017.636 43.2c6.34 1.205 11.656 4.808 17.28 8.63zm123.286 34.989a241.926 241.926 0 00-37.091-15.478c-1.268-.409-2.54-.808-3.812-1.207-3.478-1.09-7.076-2.219-10.514-3.547-6.04-2.332-11.89-5.399-17.55-8.365-3.59-1.882-7.303-3.828-11.049-5.58-6.575-3.076-13.48-5.661-20.167-8.165L15.662 32.363l-.79 1.997L47.24 46.478c6.637 2.485 13.5 5.055 19.995 8.093 3.7 1.73 7.39 3.665 10.959 5.535 5.714 2.995 11.622 6.092 17.782 8.47 3.504 1.354 7.137 2.493 10.65 3.596 1.266.396 2.532.793 3.794 1.2a239.79 239.79 0 0135.749 14.818l-1.595 2.723-.138-.726c-4.836.873-9.31-1.624-14.049-4.266-1.719-.958-3.496-1.949-5.284-2.76-2.804-1.269-5.786-2.124-8.67-2.952-2.612-.75-5.313-1.525-7.81-2.596-2.374-1.019-4.673-2.353-6.897-3.643-2.172-1.259-4.417-2.561-6.784-3.608-3.486-1.54-7.21-2.517-10.814-3.46-3.526-.924-7.172-1.88-10.503-3.356-2.803-1.242-5.482-2.898-8.073-4.498-1.51-.933-3.073-1.899-4.659-2.784-7.253-4.046-15.332-6.606-23.147-9.082-8.796-2.786-17.891-5.668-25.63-10.663l-1.214 1.784c7.987 5.155 17.228 8.083 26.165 10.915 7.707 2.442 15.677 4.967 22.732 8.903 1.544.86 3.085 1.813 4.575 2.734 2.654 1.64 5.4 3.336 8.34 4.64 3.495 1.547 7.23 2.526 10.842 3.473 3.518.921 7.155 1.874 10.477 3.342 2.255.998 4.447 2.269 6.567 3.499 2.28 1.323 4.638 2.69 7.137 3.763 2.626 1.125 5.396 1.92 8.074 2.69 2.807.805 5.71 1.638 8.365 2.84 1.703.771 3.44 1.74 5.118 2.676 4.537 2.53 9.218 5.138 14.383 4.667l-2.434 4.155-22.497-6.187c-4.503-1.237-9.159-2.517-13.276-4.747-2.456-1.33-4.767-3.031-7.004-4.676-1.417-1.043-2.882-2.12-4.389-3.11a51.779 51.779 0 00-15.511-6.864c-1.876-.485-3.8-.87-5.66-1.243-3.6-.72-6.998-1.4-10.216-2.756-1.957-.825-3.86-1.918-5.702-2.976-2.362-1.358-4.804-2.76-7.477-3.682-1.567-.541-3.183-.907-4.746-1.259-1.162-.261-2.363-.532-3.504-.869-5.448-1.609-10.348-4.938-15.086-8.156-5.395-3.666-10.978-7.427-17.51-8.831a81.263 81.263 0 015.11-8.143l-1.806-1.22A82.553 82.553 0 00.233 55.58L0 56.337l.673.44c11.767 7.689 23.936 15.64 36.955 21.796 6.239 2.95 12.744 5.518 19.034 8.002 23.939 9.456 48.693 19.234 74.01 26.239.631.175 1.584.438 2.542.135.286-.092.54-.222.767-.377.736-.505 1.183-1.268 1.477-1.772L149.2 87.336l-.997-.517z"/>
                         </g>
                     </svg>
-                    <p class='text-2xl mt-4'>volontiraj</p>
+                    <p class='text-2xl mt-4'>{{page.donateTypes[2].title}}</p>
                 </div>
             </div>
         </div>
@@ -332,7 +336,7 @@ footer: { title: 'Posetite nas', href: '/see' }
 <section class='bg-white text-black pb-32'>
     <div class='container mx-auto px-4 sm:px-16 pt-40 grid grid-cols-1 sm:grid-cols-2 gap-8'>
         <div>
-            <h3 class='text-2xl'>Prijatelji</h3>
+            <h3 class='text-2xl'>{{page.proof[0]}}</h3>
             <ul class='grid grid-cols-3 gap-4 mt-4'>
                 {% for friend in about.friends %}
                 <li>
@@ -345,7 +349,7 @@ footer: { title: 'Posetite nas', href: '/see' }
         </div>
 
         <div class='mt-8 sm:mt-0'>
-            <h3 class='text-2xl'>Pišu o Draževcu</h3>
+            <h3 class='text-2xl'>{{page.proof[1]}}</h3>
              <ul class='grid grid-cols-3 gap-4 mt-4'>
                 {% for post in about.presskit %}
                 <li>

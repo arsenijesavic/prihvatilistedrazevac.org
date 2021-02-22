@@ -1,5 +1,6 @@
 {% import 'components/index.njk' as components %}
 
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,7 +33,7 @@
 
         <nav id='nav' class='hidden sm:flex items-center '>
           <ul class='flex justify-between space-x-20 text-base leading-none list-none'>
-          {% for item in metadata['en'].navigation %}
+              {% for item in metadata[locale].navigation %}
             <li class='text-2xl'>
               <a href="{{ item.href }}" class="font-normal hover:text-primary {{ 'text-primary border-b-2 border-primary' if '/grants' in page.url }}">
                 {{ item.title }}

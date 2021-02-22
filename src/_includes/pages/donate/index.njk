@@ -4,6 +4,9 @@ theme: dark
 footer: { title: 'Posetite nas', href: '/see' }
 ---
 
+{% import 'components/index.njk' as components %}
+{% set page = site[locale].donate %}
+
 
 <section class='flex flex-col justify-center bg-brown text-black px-16'>
     <div class='container mx-auto flex flex-col justify-center items-center py-16 mt-16'>
@@ -34,27 +37,19 @@ footer: { title: 'Posetite nas', href: '/see' }
             </g>
         </svg>
 
-        <h1 class=' text-6xl sm:text-7xl leading-small text-center mt-16'>
-            {{ metadata['en'].page.donate.headline }}
-        </h1>
+        <h1 class=' text-6xl sm:text-7xl leading-small text-center mt-16'>{{page.title}}</h1>
 
 
         <div class='sm:max-w-screen-md mx-auto mt-16'>
-            <p class='text-xl sm:text-2xl'>{{ metadata['en'].page.donate.subheadline }}</p>
+            <p class='text-xl sm:text-2xl'>{{page.subtitle}}</p>
 
             <ul class='flex justify-center items-center mt-16 py-8'>
+                {% for stat in page.stats %}
                 <li class='text-center px:4 sm:px-16 border-r-2 border-gray-300'>
-                    <p class='text:2-xl sm:text-5xl leading-none font-bold'>3t</p>
-                    <p class='text-base sm:text-xl mt-2 leading-none'>granula za pse</p>
+                    <p class='text:2-xl sm:text-5xl leading-none font-bold'>{{ stat.title }}</p>
+                    <p class='text-base sm:text-xl mt-2 leading-none'>{{ stat.subtitle }}</p>
                 </li>
-                <li class='text-center px:4 sm:px-16 border-r-2 border-gray-300'>
-                    <p class='text:2-xl sm:text-5xl leading-none font-bold'>240kg</p>
-                    <p class='text-base sm:text-xl mt-2 leading-none'>mekana hrana za invalide</p>
-                </li>
-                <li class='text-center px:4 sm:px-16 border-r-2 border-gray-300'>
-                    <p class='text:2-xl sm:text-5xl leading-none font-bold'>150kg</p>
-                    <p class='text-base sm:text-xl mt-2 leading-none'>granula za macke</p>
-                </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -64,19 +59,21 @@ footer: { title: 'Posetite nas', href: '/see' }
     <div class='max-w-screen-md mx-auto'>
         <form  x-data="{ selected: '', numberOfAnimals: 1, numberOfDays: 1, description:'donation' }">
             <div>
-                <p class='text-2xl sm:text-3xl'>Odaberite tip donacije:</p>
+                <p class='text-2xl sm:text-3xl'>{{ page.form.title }} </p>
             </div>
 
             <div class='mt-8 flex justify-center items-center space-x-8'>
+
                 <label :class="{ 'bg-purple text-white': selected === 'ONCE' }" class=' cursor-pointer text-base sm:text-3xl rounded-xl border-purple border-1 p-4' for="plan-monthly">
                     <input class='hidden' x-on:click="selected = 'ONCE'" id="plan-monthly" type="radio" name="plan" value="premium-monthly">
-                    jednokratna donacija
+                    {{ page.form.types[0].label}}
                 </label>
 
                 <label :class="{ 'bg-purple text-white': selected === 'MONTHLY' }" class=' cursor-pointer text-base sm:text-3xl rounded-xl border-purple border-1 p-4' for="plan-yearly">
                     <input class='hidden' x-on:click="selected = 'MONTHLY'" id="plan-yearly" type="radio" name="plan" value="premium-yearly">
-                    mesečna donacija
+                    {{ page.form.types[1].label}}
                 </label>
+
             </div>
 
             <div x-show='selected === "ONCE"' class='w-full mt-8 bg-white shadow-md rounded-xl p-8 text-center'>
