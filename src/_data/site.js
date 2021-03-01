@@ -27,12 +27,12 @@ module.exports = {
         { label: 'cats', count: 100 },
         { label: 'horse', count: 1 },
         { label: 'donkey', count: 1 },
-        { label: "Vesne's", count: 2 },
+        { label: 'Vesna’s', count: 2 },
       ],
 
       aboutTitle: 'Story about Draževac',
       aboutSummary:
-        'Draževac shelter is an association for the protection of abandoned, both healthy and sick, disabled and old animals. Vesna Prokopljević, together with her grandson, founded a shelter in 2009, whose home became a refuge for over 300 animals from the entire territory of Serbia. Our primary goal is to give a second chance to all animals that are abandoned or not in an adequate environment, by doing our best to cure them, feed them and, with a lot of time and luck, adopt them.',
+        'Draževac shelter is an association for the protection of abandoned, both healthy and sick, disabled and old animals. Vesna Prokopljević, together with her granddaughter, founded a shelter in 2009, whose home became a refuge for over 300 animals from the entire territory of Serbia. Our primary goal is to give a second chance to all animals that are abandoned or not in an adequate environment, by doing our best to cure them, feed them and, with a lot of time and luck, adopt them.',
       aboutCTA: 'watch video',
 
       adoptTitle: 'Animals in search of a home',
@@ -167,7 +167,7 @@ We are located in the village of Draževac near Obrenovac. You can visit us any 
 
       aboutTitle: 'Story about Draževac',
       aboutSummary:
-        'Draževac shelter is an association for the protection of abandoned, both healthy and sick, disabled and old animals. Vesna Prokopljević, together with her grandson, founded a shelter in 2009, whose home became a refuge for over 300 animals from the entire territory of Serbia. Our primary goal is to give a second chance to all animals that are abandoned or not in an adequate environment, by doing our best to cure them, feed them and, with a lot of time and luck, adopt them.',
+        'Draževac shelter is an association for the protection of abandoned, both healthy and sick, disabled and old animals. Vesna Prokopljević, together with her granddaughter, founded a shelter in 2009, whose home became a refuge for over 300 animals from the entire territory of Serbia. Our primary goal is to give a second chance to all animals that are abandoned or not in an adequate environment, by doing our best to cure them, feed them and, with a lot of time and luck, adopt them.',
       aboutCTA: 'watch video',
 
       adoptTitle: 'Animals in search of a home',
