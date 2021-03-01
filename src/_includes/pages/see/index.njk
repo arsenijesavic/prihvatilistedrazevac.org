@@ -1,25 +1,27 @@
 ---
-layout: base
+layout: layouts/base.njk
 theme: dark
-footer: { title: 'Udomi', href: '/adopt' }
 ---
 
-<section class='min-h-screen'>
+{% set page = site[locale].see %}
+
+{# HERO #}
+<header class='min-h-screen'>
     <div class='container mx-auto px-4 sm:px-16 py-16 sm:py-32'>
         <div class='grid grid-cols-1 sm:grid-cols-12 gap-4 justify-between items-center mt-16'>
             <div class='sm:col-span-7 sm:pr-32'>
                 <h1 class='text-6xl sm:text-7xl font-medium leading-none'>
-                    {{ metadata['en'].page.visit.headline }}
+                    {{ page.headline }}
                 </h1>
 
                 <div class='text-xl sm:text-2xl mt-4 font-light'>
-                    <a target='_tab' href="http://maps.google.com/?q=Veverički kraj 47, Draževac, Srbija">Ulica: <span class='text-blue'> Veverički kraj 47, Draževac, Srbija </span></a>
-                    {# <p>Ulica: Veverički kraj 47, Draževac, Srbija</p> #}
-                    <p>Kontakt: +38161 210-92-87 - Vesna Grublješić Prokopljević </p>
+                    <a target='_tab' href="http://maps.google.com/?q=Veverički kraj 47, Draževac, Srbija">
+                    {{ "Ulica:" if locale =='sr' else 'Street' }} <span class='text-blue'>Veverički kraj 47, Draževac, Srbija</span></a>
+                    <p>{{ "Kontakt:" if locale =='sr' else 'Contact' }}+38161 210-92-87 - Vesna Grublješić Prokopljević</p>
                 </div>
 
                 <p class='mt-6 text-xl'>
-                    {{ metadata['en'].page.visit.summary }}
+                    {{ page.summary }}
                 </p>
             </div>
 
@@ -30,10 +32,9 @@ footer: { title: 'Udomi', href: '/adopt' }
             </div>
         </div>
     </div>
-</section>
+</header>
 
-
-
+{# MAP #}
 <section id="map" class='w-full h-560px mb-2' ></section>
 
 <script>

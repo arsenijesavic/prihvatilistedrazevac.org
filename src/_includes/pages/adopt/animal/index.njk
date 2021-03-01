@@ -1,35 +1,54 @@
 ---
 layout: base
 theme: dark
-footer: { title: 'Posetite nas', href: '/see' }
 ---
 
 {% import 'components/index.njk' as components %}
 
-<section class='min-h-screen bg-gray-200 text-black'>
+{# HERO #}
+<header class='min-h-screen bg-gray-200 text-black'>
     <div class='container mx-auto px-4 sm:px-16 pt-32 pb-16'>
         <header class='flex flex-wrap justify-between items-center mt-16'>
-            <div class='w-full sm:w-7/12 mt-6 sm:mt-0'>
-                <h1 class='text-6xl sm:text-7xl leading-none capitalize'>{{animal.name}}</h1>
+            <div class='w-full sm:w-5/12 mt-6 sm:mt-0'>
+                <h1 class='text-6xl sm:text-7xl leading-none capitalize'>
+                    {{animal[locale].name}}
+                </h1>
+
                 <div class='flex justify-between max-w-xs mt-4'>
-                    <p class='text-base'>Pol:</p>
-                    <p class='text-xl'>Mužjak</p>
+                    <p class='text-base'>
+                        {{ "Pol:" if locale =='sr' else 'Gender:' }}
+                    </p>
+                    <p class='text-xl capitalize'>{{animal[locale].gender}}</p>
                 </div>
 
                 <div class='flex justify-between max-w-xs mt-4'>
-                    <p class='text-base'>Godine:</p>
-                    <p class='text-xl'>Oko 2</p>
+                    <p class='text-base'>
+                        {{ "Godine:" if locale =='sr' else 'Years:' }}
+                    </p>
+                    <p class='text-xl'>{{animal[locale].age}}</p>
                 </div>
 
-                <div class='flex justify-between max-w-xs mt-4'>
+                <div class='mt-8'>
+                    {# <svg xmlns="http://www.w3.org/2000/svg" width="90" height="61">
+                        <path fill="#FEFEFE" d="M87.109 5.723l-1.516 52.594c-6.444-2.344-12.22-3.134-19.95-3.134-7.731 0-15.024 1.316-21.47 3.661V5.724C50.62 3.38 57.913 2.06 65.644 2.06c7.73 0 15.02 1.319 21.466 3.662"/>
+                        <path fill="#231F20" d="M45.395 6.585v50.543c6.355-2.103 13.158-3.169 20.246-3.169 7.504 0 12.497-.622 18.193 1.258l2.028-48.64c-6.31-2.188-13.106-3.295-20.221-3.295-7.122 0-13.928 1.11-20.246 3.303zm-2.441 53.12V4.867l.802-.292C50.569 2.098 57.93.841 65.64.841c7.712 0 15.075 1.257 21.886 3.735l.827.301-1.59 55.166-1.59-.578C79.116 57.26 73.638 56.4 65.64 56.4c-7.415 0-14.498 1.21-21.05 3.589l-1.637-.285z"/>
+                        <path fill="#231F20" d="M22.708 53.96c7.09 0 13.893 1.064 20.245 3.167V6.58c-5.561-1.987-12.739-4.138-20.245-4.138-7.496 0-14.847 2.543-20.407 4.53L4.33 56.088c5.773-1.903 10.947-2.127 18.38-2.127zm22.686 6.624l-1.636-.594c-6.55-2.381-13.631-3.589-21.05-3.589-7.92 0-13.644.908-19.757 3.131l-1.597.58L0 4.876l.824-.3C6.676 2.445 14.455 0 22.708 0c8.255 0 16.033 2.447 21.884 4.575l.802.293v55.716z"/>
+                        <path fill="#F7DE7C" d="M88.406 5.938l-1.298 14.79c-6.444-2.345-13.736-3.661-21.466-3.661s-15.023 1.316-21.468 3.661V5.723C50.619 3.38 57.91 2.061 65.642 2.061c7.73 0 16.319 1.533 22.764 3.877"/>
+                        <path fill="#231F20" d="M65.641 15.844c7.143 0 13.994 1.08 20.388 3.215l1.077-12.285c-6.332-2.163-14.458-3.492-21.465-3.492-7.121 0-13.93 1.111-20.246 3.303v12.426c6.356-2.102 13.159-3.167 20.246-3.167zm-22.687 8.134V4.868l.803-.292C50.567 2.098 57.932.84 65.64.84c7.716 0 16.381 1.477 23.182 3.95l.88.321-1.921 19.611-1.09-2.848c-6.551-2.38-13.633-3.589-21.05-3.589-7.417 0-14.417 2.196-20.97 4.577l-1.718 1.116z"/>
+                    </svg> #}
+
+                <p class='text-base mt-6'>{{ animal[locale].story }}</p>
+                </div>
+
+                {# <div class='flex justify-between max-w-xs mt-4'>
                     <p class='text-base'>Veličina:</p>
                     <p class='text-xl'>Prosečna</p>
-                </div>
+                </div> #}
 
-                <div class='flex justify-between max-w-xs mt-4'>
+                {# <div class='flex justify-between max-w-xs mt-4'>
                     <p class='text-base'>U prihvatilištu od:</p>
                     <p class='text-xl'>Maj 2019</p>
-                </div>
+                </div> #}
             </div>
 
             <div class='w-full sm:w-5/12 sm:px-8 order-first sm:order-last'>
@@ -39,14 +58,14 @@ footer: { title: 'Posetite nas', href: '/see' }
             </div>
         </header>
     </div>
-</section>
+</header>
 
-<section class='relative bg-white text-black sm:pt-16'>
+{# STORY #}
+{# <section class='relative bg-white text-black sm:pt-16'>
     {{ components.wave('white') }}
     
     <div class='container mx-auto px-4 sm:px-16 py-16'>
         <div class='flex flex-wrap justify-between items-center'>
-
             <div class='w-full sm:w-5/12 sm:p-8'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="61">
                     <path fill="#FEFEFE" d="M87.109 5.723l-1.516 52.594c-6.444-2.344-12.22-3.134-19.95-3.134-7.731 0-15.024 1.316-21.47 3.661V5.724C50.62 3.38 57.913 2.06 65.644 2.06c7.73 0 15.02 1.319 21.466 3.662"/>
@@ -56,12 +75,13 @@ footer: { title: 'Posetite nas', href: '/see' }
                     <path fill="#231F20" d="M65.641 15.844c7.143 0 13.994 1.08 20.388 3.215l1.077-12.285c-6.332-2.163-14.458-3.492-21.465-3.492-7.121 0-13.93 1.111-20.246 3.303v12.426c6.356-2.102 13.159-3.167 20.246-3.167zm-22.687 8.134V4.868l.803-.292C50.567 2.098 57.932.84 65.64.84c7.716 0 16.381 1.477 23.182 3.95l.88.321-1.921 19.611-1.09-2.848c-6.551-2.38-13.633-3.589-21.05-3.589-7.417 0-14.417 2.196-20.97 4.577l-1.718 1.116z"/>
                 </svg>
 
-                <h2 class='text-5xl leading-none mt-10'>Priča o Peri</h2>
-                <p class='text-base mt-6'>{{animal.story}}</p>
+                <h2 class='text-5xl leading-none mt-10'>Priča o {{ animal[locale].name }}</h2>
+                <p class='text-base mt-6'>{{ animal[locale].story }}</p>
 
                 <p class='text-xl font-bold mt-10'>
                     Idealan dom
                 </p>
+
                 <p>
                     Obzirom da je Pera i dalje mali decak, trazi porodicu koja ce moci da proprati njegovu energiju i par setnji dnevno.
                 </p>
@@ -74,14 +94,16 @@ footer: { title: 'Posetite nas', href: '/see' }
             </div>
         </div>
     </div>
-</section>
+</section> #}
 
 {# PROCESS #}
-<section class='relative bg-white pt-32 pb-48'>
+<section class='bg-white relative pt-32 pb-32'>
     {{ components.wave('white') }}
 
      <div class='container mx-auto px-4 sm:px-16'>
-        <h2 class='text-5xl sm:text-6xl font-light text-center'>Procedura udomljavanja</h2>
+        <h2 class='text-5xl sm:text-6xl font-light text-center'>
+            {{ site[locale].processTitle }}
+        </h2>
         
         <ul class='grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16'>
 
@@ -103,8 +125,8 @@ footer: { title: 'Posetite nas', href: '/see' }
                 </svg>
 
                 <div>
-                    <p class='mt-4 text-xl'>1 - Dolazak i upoznavanje</p>
-                    <p class='mt-2'>Nalazimo se u Draževcu, malom naseljenom mestu na opštini Obrenovac.</p>
+                    <p class='mt-4 text-xl'>1 - {{site[locale].adopt.processSteps[0].title}}</p>
+                    <p class='mt-2'>{{ site[locale].adoptp.rocessSteps[0].description }} </p>
                 </div>
             </li>
 
@@ -122,8 +144,8 @@ footer: { title: 'Posetite nas', href: '/see' }
                 </svg>
 
                 <div>
-                    <p class='mt-4 text-xl'>2 - Potpisivanje ugovora</p>
-                    <p class='mt-2'>Potpisivanjem ugovora se obavezujete na potpunu odgovornost za dobrobit udomljene životinje.</p>
+                    <p class='mt-4 text-xl'>2 - {{ site[locale].adopt.processSteps[1].title }}</p>
+                    <p class='mt-2'>{{ site[locale].adopt.processSteps[1].description }} </p>
                 </div>
             </li>
 
@@ -145,8 +167,8 @@ footer: { title: 'Posetite nas', href: '/see' }
                 </svg>
 
                 <div>
-                    <p class='mt-4 text-xl'>3 - Preuzimanje njuške</p>
-                    <p class='mt-2'>Prijatelji za ceo život.</p>
+                    <p class='mt-4 text-xl'>3 - {{ site[locale].adopt.processSteps[2].title }}</p>
+                    <p class='mt-2'>{{ site[locale].adopt.processSteps[2].description }}</p>
                 </div>
             </li>
         </ul>

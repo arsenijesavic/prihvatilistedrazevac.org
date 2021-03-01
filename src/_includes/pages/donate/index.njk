@@ -1,14 +1,13 @@
 ---
 layout: layouts/base.njk
 theme: dark
-footer: { title: 'Posetite nas', href: '/see' }
 ---
 
 {% import 'components/index.njk' as components %}
 {% set page = site[locale].donate %}
 
-
-<section class='flex flex-col justify-center bg-brown text-black px-16'>
+{# HERO #}
+<header class='flex flex-col justify-center bg-brown text-black px-16'>
     <div class='container mx-auto flex flex-col justify-center items-center py-16 mt-16'>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 110 83" width='110' height='83'>
             <defs>
@@ -53,7 +52,7 @@ footer: { title: 'Posetite nas', href: '/see' }
             </ul>
         </div>
     </div>
-</section>
+</header>
 
 <section class='min-h-screen bg-brown text-black px-4 sm:px-16 pb-32'>
     <div class='max-w-screen-md mx-auto'>
@@ -80,7 +79,13 @@ footer: { title: 'Posetite nas', href: '/see' }
 
                 <div>
                     <p class='text-xl'>
-                        Hoću da nahranim <span x-text='numberOfAnimals' class='text-2xl'></span> <span x-text='numberOfAnimals > 1 ? "zivotinje" : "zivotinju"' class='text-2xl'></span>
+                      {{ "Hoću da nahranim " if locale =='sr' else 'I want to feed' }}
+                      <span x-text='numberOfAnimals' class='text-2xl'></span> 
+                      {% if locale =='sr' %}
+                        <span x-text='numberOfAnimals > 1 ? "zivotinje" : "zivotinju"' class='text-2xl'></span>
+                      {% else %}
+                        <span x-text='numberOfAnimals > 1 ? "animals" : "animal"' class='text-2xl'></span>
+                      {% endif %}
                     </p>
 
                     <div class="length range__slider w-full" data-min="1" data-max="200">
@@ -90,7 +95,14 @@ footer: { title: 'Posetite nas', href: '/see' }
 
                 <div>
                     <p class='text-xl'>
-                        u periodu od <span x-text='numberOfDays' class='text-2xl'></span> <span x-text='numberOfDays > 1 ? "dana" : "dana"' class='text-2xl'></span>
+                      {{ "u periodu od" if locale =='sr' else "in the period of" }}
+                      <span x-text='numberOfDays' class='text-2xl'></span> 
+                       {% if locale =='sr' %}
+                        <span x-text='numberOfDays > 1 ? "dana" : "dana"' class='text-2xl'></span>
+                      {% else %}
+                        <span x-text='numberOfDays > 1 ? "days" : "day"' class='text-2xl'></span>
+                      {% endif %}
+                      
                     </p>
 
                     <div class="length range__slider w-full" data-min="1" data-max="90">
@@ -121,10 +133,9 @@ footer: { title: 'Posetite nas', href: '/see' }
                     </div>
                 </div>
 
-
-                <div class='mt-16'>
+                {# <div class='mt-16'>
                     <p>Ili uplatom na žiro račun</p>
-                </div>
+                </div> #}
             </div>
 
             <div x-show='selected === "MONTHLY"' class='w-full mt-8 bg-white shadow-md rounded-xl p-8 text-center'>

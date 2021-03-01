@@ -1,29 +1,23 @@
 ---
 layout: layouts/base.njk
 theme: dark
-footer: { title: 'Posetite nas', href: '/see' }
 ---
 
 {% import 'components/index.njk' as components %}
 {% set page = site[locale].adopt %}
-{% set footer = { title: 'test'} %}
 
+{# HERO #}
 <header class='bg-blue text-white sm:p-16'>
-
     <div class='container mx-auto px-4 sm:px-16'>
-        {# <figure class='mt-24'>
-            <img src="/static/images/adopt@3x.png" alt="">
-        </figure> #}
-
         <div class='w-full flex justify-between sm:justify-center items-center sm:space-x-32 py-32 sm:py-0 sm:mt-16'>
-            <a href='/adopt/animals?animal=dog' class='block text-center'>
+            <a href='{% if locale == 'en' %}/en{% endif %}/adopt/animals?animal=dog' class='block text-center'>
                 <figure class='w-32 p-4 sm:w-48 sm:p-0'>
                     <img class='w-full h-full object-contain shadowed-green transition all ease-in duration-100' src="/static/images/dog@3x.png" alt="">
                 </figure>
                 <p class='text-xl sm:text-4xl mt-4'>{{ page.adoptOptions[0] }}</p>
             </a>
 
-            <a href='/adopt/animals?animal=cat' class='block text-center'>
+            <a href='{% if locale == 'en' %}/en{% endif %}/adopt/animals?animal=cat' class='block text-center'>
                 <figure class='w-32 p-4 sm:w-48 sm:p-0'>
                     <img class='w-full h-full object-contain shadowed-pink transition all ease-in duration-100' src="/static/images/cat@3x.png" alt="">
                 </figure>

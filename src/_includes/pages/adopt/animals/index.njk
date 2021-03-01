@@ -1,14 +1,14 @@
 ---
 layout: base
 theme: dark
-footer: { title: 'Posetite nas', href: '/see' }
 ---
 
-<section class='min-h-screen bg-white text-black '>
+{# HERO #}
+<header class='min-h-screen bg-white text-black '>
     <div class='container mx-auto px-4 sm:px-16 py-16'>
         <header>
             <h1 class='text-6xl sm:text-7xl leading-none mt-32'>
-                {{ metadata['en'].page.animals.headline }}
+                {{ site[locale].adopt.animals.headline }}
             </h1>
         </header>
 
@@ -19,11 +19,15 @@ footer: { title: 'Posetite nas', href: '/see' }
                         <figure class='aspect-w-1 aspect-h-1'>
                             <img class='w-full h-full object-cover rounded-xl shadow-yellow-lg' src="{{ animal.image }}" alt="">
                         </figure>
-                        <p class='text-2xl sm:text-3xl mt-4'>{{ animal.name }}</p>
-                        <p class='opacity-75'>{{ animal.age }}</p>
+                        <p class='text-2xl sm:text-3xl mt-4'>
+                            {{ animal[locale].name }}
+                        </p>
+                        <p class='opacity-75'>
+                            {{ animal[locale].age }}
+                        </p>
                     </a>
                 </li>
             {%endfor%}
         </ul>
     </div>
-</section>
+</header>
