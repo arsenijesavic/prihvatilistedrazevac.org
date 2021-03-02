@@ -75,6 +75,8 @@ module.exports = {
         },
       ],
       thanksTitle: 'Thank you',
+      thanksSubtitle: 'People who adopted our animals',
+
       faqTitle: 'Frequently Asked Questions',
       faq: [
         {
@@ -113,7 +115,7 @@ module.exports = {
         {
           index: 6,
           question:
-            'Is it okay to take a dog and to keep hip on a leash or cage?',
+            'Is it okey to take a dog and to keep him on a leash or in a cage?',
           answer: `No. We do not support this type of foster care. If the dog is bigger and with a thick fur, it is quite acceptable to live in the yard, but life on a chain or in a cage is a cruel deprivation of liberty, and we do not support that.)`,
         },
       ],
@@ -124,9 +126,9 @@ module.exports = {
       subtitle:
         'The monthly costs of the shelter are very high considering the number of animals we feed, treat and support. Every donation, large or small, monthly or one-time, is what maintains the shelter and our 300 animals.)',
       stats: [
-        { title: '3t', subtitle: 'granula za pse' },
-        { title: '240kg', subtitle: 'mekana hrana za invalide' },
-        { title: '150kg', subtitle: 'granula za macke' },
+        { title: '3t', subtitle: 'granules for dogs' },
+        { title: '240kg', subtitle: 'soft food for the disabled' },
+        { title: '150kg', subtitle: 'granules for cats' },
       ],
       form: {
         title: 'Choose a donation type:',
@@ -158,11 +160,11 @@ We are located in the village of Draževac near Obrenovac. You can visit us any 
       heroSubtitle:
         'Temporary house for animals <br/>  who are looking for a home',
       heroStats: [
-        { label: 'dogs', count: 200 },
-        { label: 'cats', count: 100 },
-        { label: 'horse', count: 1 },
-        { label: 'donkey', count: 1 },
-        { label: "Vesne's", count: 2 },
+        { label: 'pasa', count: 200 },
+        { label: 'mačaka', count: 100 },
+        { label: 'konj', count: 1 },
+        { label: 'marac', count: 1 },
+        { label: 'Vesne', count: 2 },
       ],
 
       aboutTitle: 'Story about Draževac',
@@ -201,6 +203,7 @@ We are located in the village of Draževac near Obrenovac. You can visit us any 
         },
       ],
       thanksTitle: 'Hvala vam!',
+      thanksSubtitle: 'Ljudi koji su usvojili nase zivotinje',
 
       faq: [
         {

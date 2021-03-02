@@ -6,6 +6,7 @@ theme: light
 {% import 'components/index.njk' as components %}
 {% set page = site[locale].index %}
 
+
 {# HERO #}
  <header class='min-h-screen relative bg-white text-white flex items-center'>
     <div class='flex-1 container mx-auto relative z-30 px-4 sm:px-16'>
@@ -20,16 +21,16 @@ theme: light
 
     <div class='absolute left-0 right-0 bottom-0 z-30 mb-8 sm:mb-20'>
         <ul class='flex justify-center items-center text-center px-4 sm:px-16'>
-            {% for stat in page.heroStats  %}
+            {% for item in page.heroStats %}
             <li class='px-4 sm:px-16 {{ "border-r-0" if loop.last else "border-r-2" }} border-gray-300'>
                 <p class='text-base sm:text-3xl leading-none font-bold'>
-                    {{ stat.count }}
+                    {{ item.count }}
                 </p>
                 <p class='text-sm sm:text-xl leading-none'>
-                    {{ stat.label }}
+                    {{ item.label }}
                 </p>
             </li>
-        {% endfor %}
+            {% endfor %}
         </ul>
     </div> 
 
