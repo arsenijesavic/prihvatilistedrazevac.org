@@ -9,8 +9,17 @@ theme: dark
 {# HERO #}
 <header class='bg-blue text-white sm:p-16'>
     <div class='container mx-auto px-4 sm:px-16'>
+        <div class=' grid gap-4 grid-cols-1 sm:grid-cols-3 pt-32'>
+            {% for i in range(1, 31) -%}
+            <figure class=' aspect-w-4 aspect-h-3'>
+                <img class='w-full object-cover rounded-lg' src="/static/images/web/animal{{i}}.jpg" alt="">
+            </figure>
+            {%- endfor %}   
+        </div>
+
         <div class='w-full flex justify-between sm:justify-center items-center sm:space-x-32 py-32 sm:py-0 sm:mt-16'>
-            <a href='{% if locale == 'en' %}/en{% endif %}/adopt/animals?animal=dog' class='block text-center'>
+        
+            {# <a href='{% if locale == 'en' %}/en{% endif %}/adopt/animals?animal=dog' class='block text-center'>
                 <figure class='w-32 p-4 sm:w-48 sm:p-0'>
                     <img class='w-full h-full object-contain shadowed-green transition all ease-in duration-100' src="/static/images/dog@3x.png" alt="">
                 </figure>
@@ -22,7 +31,7 @@ theme: dark
                     <img class='w-full h-full object-contain shadowed-pink transition all ease-in duration-100' src="/static/images/cat@3x.png" alt="">
                 </figure>
                 <p class='text-xl sm:text-4xl mt-4'>{{ page.adoptOptions[1] }}</p>
-            </a>
+            </a> #}
         </div>
     </div>
 </header>
