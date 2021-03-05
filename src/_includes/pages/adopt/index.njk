@@ -9,7 +9,7 @@ theme: dark
 {# HERO #}
 <header class='bg-blue text-white sm:p-16'>
     <div class='container mx-auto px-4 sm:px-16'>
-        <div class=' grid gap-4 grid-cols-1 sm:grid-cols-3 pt-32'>
+        <div class='grid gap-4 grid-cols-1 sm:grid-cols-3 pt-32'>
             {% for i in range(1, 31) -%}
             <figure class=' aspect-w-4 aspect-h-3'>
                 <img class='w-full object-cover rounded-lg' src="/static/images/web/animal{{i}}.jpg" alt="">
@@ -121,28 +121,16 @@ theme: dark
             <p class='text-xl sm:text-2xl font-light text-center'>{{page.thanksSubtitle}}</p>
         </header>
 
+        
         <div class='mt-8'>
             <ul class='grid grid-cols-1 sm:grid-cols-4 gap-4'>
+            {% for i in range(1, 13) -%}
                 <li class='aspect-w-1 aspect-h-1'>
                     <div class='w-full h-full rounded-xl overflow-hidden bg-gray-300'>
-                        <img class='w-full h-full object-cover' src="/static/images/adopted-1.jpg" alt="">
+                        <img class='w-full h-full object-cover' src="/static/images/adopted/adopted{{i}}.jpg" alt="">
                     </div>
                 </li>
-                <li class=' aspect-w-1 aspect-h-1'>
-                    <div class='w-full h-full rounded-xl overflow-hidden bg-gray-300'>
-                        <img class='w-full h-full object-cover' src="/static/images/adopted-2.jpg" alt="">  
-                    </div>
-                </li>
-                <li class=' aspect-w-1 aspect-h-1'>
-                    <div class='w-full h-full rounded-xl overflow-hidden bg-gray-300'>
-                        <img class='w-full h-full object-cover' src="/static/images/adopted-3.jpg" alt="">  
-                    </div>
-                </li>
-                <li class=' aspect-w-1 aspect-h-1'>
-                    <div class='w-full h-full rounded-xl overflow-hidden bg-gray-300'>
-                        <img class='w-full h-full object-cover' src="/static/images/adopted-4.jpg" alt="">  
-                    </div>
-                </li>
+            {%- endfor %}   
             </ul>
         </div>
     </div>
