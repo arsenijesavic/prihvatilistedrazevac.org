@@ -156,9 +156,8 @@ We are located in the village of Draževac near Obrenovac. You can visit us any 
     ],
 
     index: {
-      heroTitle: 'Draževac <br/> Shelter',
-      heroSubtitle:
-        'Temporary house for animals <br/>  who are looking for a home',
+      heroTitle: 'Prihvatilište <br/> Draževac',
+      heroSubtitle: `Privremena kuća za njuške <br/> koje traže stalni dom`,
       heroStats: [
         { label: 'pasa', count: 200 },
         { label: 'mačaka', count: 100 },
@@ -167,17 +166,16 @@ We are located in the village of Draževac near Obrenovac. You can visit us any 
         { label: 'Vesne', count: 2 },
       ],
 
-      aboutTitle: 'Story about Draževac',
-      aboutSummary:
-        'Draževac shelter is an association for the protection of abandoned, both healthy and sick, disabled and old animals. Vesna Prokopljević, together with her granddaughter, founded a shelter in 2009, whose home became a refuge for over 300 animals from the entire territory of Serbia. Our primary goal is to give a second chance to all animals that are abandoned or not in an adequate environment, by doing our best to cure them, feed them and, with a lot of time and luck, adopt them.',
-      aboutCTA: 'watch video',
+      aboutTitle: 'Priča o Draževcu',
+      aboutSummary: `Prihvatilište Draževac je udruženje za zaštitu napuštenih, kako zdravih tako i bolesnih, invalidnih i starih životinja. Vesna Prokopljević je, zajedno sa svojom unukom, 2009. osnovala prihvatilište čiji je dom postao utočište za preko 300 životinja s teritorije cele Srbije. Naš primarni cilj je da pružimo drugu šansu svim životinjama koje su napuštene ili koje se ne nalaze u adekvatnom okruženju, tako što dajemo sve od sebe da ih izlečimo, uhranimo i uz puno vremena i sreće, udomimo.`,
 
-      adoptTitle: 'Animals in search of a home',
+      aboutCTA: 'pogledaj <br/> video',
+
+      adoptTitle: 'Njuške u potrazi za domom',
       adoptCTA: 'Obidji sve drugare',
 
-      donateTitle: 'How else can I help?',
-      donateSubtitle:
-        'Given that the costs of a shelter of such capacity are huge, we have been surviving for years thanks to the help, support and donations of good people. Anyone who is unable to adopt an animal, support financially or donate food can help us in other ways. We always need dog houses to make it easier for them to survive the winter, occasional or permanent volunteers as well as people who would come just to pet all those animals who are eager for love and attention. Our desire is to encourage people to help in their own way and within their means because any help is welcome!',
+      donateTitle: 'Kako još mogu da pomognem?',
+      donateSubtitle: `S obzirom da su troškovi prihvatilišta ovolikog kapaciteta veliki, već godinama opstajemo zahvaljujući pomoći, podršci i donacijama dobrih ljudi. Svako ko nije u mogućnosti da udomi životinju, podrži finansijski ili da donira hranu, može nam pomoći na druge načine. Uvek su nam potrebne kućice za pse kako bi lakše preživeli zimu, povremeni ili stalni volonteri kao i ljudi koji bi došli samo da maze sve te njuške željne ljubavi i pažnje. Naša želja je da ohrabrimo ljude da pomognu na svoj način i u sklopu svojih mogućnosti jer je svaka pomoć dobrodošla!`,
     },
 
     adopt: {
