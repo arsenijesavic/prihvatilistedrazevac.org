@@ -162,7 +162,7 @@ We are located in the village of Draževac near Obrenovac. You can visit us any 
         { label: 'pasa', count: 200 },
         { label: 'mačaka', count: 100 },
         { label: 'konj', count: 1 },
-        { label: 'marac', count: 1 },
+        { label: 'magarc', count: 1 },
         { label: 'Vesne', count: 2 },
       ],
 
