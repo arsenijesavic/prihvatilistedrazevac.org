@@ -188,7 +188,7 @@ We are located in the village of Draževac near Obrenovac. You can visit us any 
         {
           title: 'Dolazak i upoznavanje',
           description:
-            'We are located in Draževac, a small place in the municipality of Obrenovac.',
+            'Nalazimo se u Draževcu, malom mestu pored Obrenovca.',
         },
         {
           title: 'Potpisivanje ugovora',
