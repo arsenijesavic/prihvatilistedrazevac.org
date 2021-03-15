@@ -61,6 +61,10 @@
             </a>
           </div>
 
+ <div class='mt-8 text-center '>
+          <a href='/en'>EN</a><span class='p-4'>|</span><a href='/'>SR</a>
+        </div>
+        
           <ul class='flex-1 flex flex-col justify-between items-center py-40 leading-none list-none'>
             {% for item in site[locale].navigation %}
               <li class='text-5xl'>
@@ -71,9 +75,7 @@
             {% endfor %}
           </ul>
 
-           <div class='absolute bottom-0 left-0 right-0 text-center transform -translate-y-8'>
-          <a href='/en'>EN</a><span class='p-4'>|</span><a href='/'>SR</a>
-        </div>
+          
         </nav>
 
        <button id='hamburgerbtn' class="sm:hidden relative z-20 inline-flex items-end justify-end p-2 text-black  hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-expanded="false">
